@@ -1,2 +1,0 @@
-fn(State<Arc<AppState>>) -> impl Future<Output = Json<ApiResponse<SystemStatus>>> {get_status}
-fn(State<Arc<AppState>>) -> impl Future<Output = Json<ApiResponse<SystemStatus>>> {get_status}: Handler<_, _>

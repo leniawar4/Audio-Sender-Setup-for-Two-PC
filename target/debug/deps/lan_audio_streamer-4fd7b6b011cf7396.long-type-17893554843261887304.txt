@@ -1,2 +1,0 @@
-fn(axum::extract::State<Arc<AppState>>) -> impl Future<Output = axum::Json<ApiResponse<Vec<TrackStatus>>>> {get_tracks}
-fn(axum::extract::State<Arc<AppState>>) -> impl Future<Output = axum::Json<ApiResponse<Vec<TrackStatus>>>> {get_tracks}: Handler<_, _>

@@ -1,2 +1,0 @@
-fn(State<Arc<AppState>>) -> impl Future<Output = Json<ApiResponse<Vec<TrackStatus>>>> {get_tracks}
-fn(State<Arc<AppState>>) -> impl Future<Output = Json<ApiResponse<Vec<TrackStatus>>>> {get_tracks}: Handler<_, _>

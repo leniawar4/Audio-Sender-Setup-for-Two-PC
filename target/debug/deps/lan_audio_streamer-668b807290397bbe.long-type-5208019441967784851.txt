@@ -1,2 +1,0 @@
-fn(WebSocketUpgrade, axum::extract::State<Arc<AppState>>) -> impl Future<Output = impl IntoResponse> {websocket_handler}
-fn(WebSocketUpgrade, axum::extract::State<Arc<AppState>>) -> impl Future<Output = impl IntoResponse> {websocket_handler}: Handler<_, _>
