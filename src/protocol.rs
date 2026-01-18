@@ -177,6 +177,13 @@ impl AudioPacket {
     }
 }
 
+/// Response for device list with receiver/sender flag
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DevicesResponse {
+    pub devices: Vec<AudioDeviceInfo>,
+    pub is_receiver: bool,
+}
+
 /// Control message types for WebSocket communication
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(tag = "type", content = "data")]
@@ -206,7 +213,7 @@ pub enum ControlMessage {
     ListDevices,
     
     /// Device list response
-    Devices(Vec<AudioDeviceInfo>),
+    Devices(DevicesResponse),
     
     /// Error response
     Error { message: String },

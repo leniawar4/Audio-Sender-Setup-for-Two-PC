@@ -17,6 +17,8 @@ pub enum TrackEvent {
     Started(u8),
     Stopped(u8),
     ConfigUpdated(u8),
+    /// Device changed event: (track_id, old_device_id, new_device_id)
+    DeviceChanged(u8, String, String),
     Error(u8, String),
 }
 
@@ -162,7 +164,23 @@ impl TrackManager {
             .get_mut(&track_id)
             .ok_or(TrackError::NotFound(track_id))?;
         
+        // Check if device_id is changing
+        let old_device_id = track.device_id.clone();
+        let new_device_id = update.device_id.clone();
+        
         track.update_config(&update)?;
+        
+        // Emit DeviceChanged event if device changed
+        if let Some(ref new_id) = new_device_id {
+            if &old_device_id != new_id {
+                let _ = self.event_tx.send(TrackEvent::DeviceChanged(
+                    track_id,
+                    old_device_id,
+                    new_id.clone(),
+                ));
+            }
+        }
+        
         let _ = self.event_tx.send(TrackEvent::ConfigUpdated(track_id));
         
         Ok(())

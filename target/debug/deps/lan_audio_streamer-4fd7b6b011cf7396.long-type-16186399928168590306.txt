@@ -1,4 +1,0 @@
-parking_lot::lock_api::RwLock<dashmap::lock::RawRwLock, hashbrown::map::HashMap<u8, dashmap::util::SharedValue<Track>, RandomState>>
-[parking_lot::lock_api::RwLock<dashmap::lock::RawRwLock, hashbrown::map::HashMap<u8, dashmap::util::SharedValue<Track>, RandomState>>]
-Unique<[parking_lot::lock_api::RwLock<dashmap::lock::RawRwLock, hashbrown::map::HashMap<u8, dashmap::util::SharedValue<Track>, RandomState>>]>
-Box<[parking_lot::lock_api::RwLock<dashmap::lock::RawRwLock, hashbrown::map::HashMap<u8, dashmap::util::SharedValue<Track>, RandomState>>]>

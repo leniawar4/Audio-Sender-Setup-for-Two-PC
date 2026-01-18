@@ -312,6 +312,12 @@ impl NetworkPlayback {
         jitter.insert(frame)
     }
     
+    /// Push a decoded frame directly to the output buffer (bypassing jitter buffer)
+    /// Use this when you have your own jitter buffer management
+    pub fn push_frame_direct(&self, frame: AudioFrame) -> bool {
+        self.decoded_buffer.push(frame)
+    }
+    
     /// Process jitter buffer and push to playback
     pub fn process(&self) -> Option<AudioFrame> {
         let mut jitter = self.jitter_buffer.lock();

@@ -11,7 +11,7 @@ use futures_util::{SinkExt, StreamExt};
 use std::sync::Arc;
 use tokio::sync::broadcast;
 
-use crate::protocol::ControlMessage;
+use crate::protocol::{ControlMessage, DevicesResponse};
 use crate::ui::server::AppState;
 
 /// WebSocket upgrade handler
@@ -19,11 +19,12 @@ pub async fn websocket_handler(
     ws: WebSocketUpgrade,
     State(state): State<Arc<AppState>>,
 ) -> impl IntoResponse {
-    ws.on_upgrade(move |socket| handle_socket(socket, state))
+    let is_sender = state.is_sender;
+    ws.on_upgrade(move |socket| handle_socket(socket, state, is_sender))
 }
 
 /// Handle WebSocket connection
-async fn handle_socket(socket: WebSocket, state: Arc<AppState>) {
+async fn handle_socket(socket: WebSocket, state: Arc<AppState>, is_sender: bool) {
     let (mut sender, mut receiver) = socket.split();
     
     // Subscribe to control messages
@@ -55,7 +56,7 @@ async fn handle_socket(socket: WebSocket, state: Arc<AppState>) {
             match msg {
                 Message::Text(text) => {
                     if let Ok(control_msg) = serde_json::from_str::<ControlMessage>(&text) {
-                        handle_control_message(control_msg, &track_manager, &control_tx).await;
+                        handle_control_message(control_msg, &track_manager, &control_tx, is_sender).await;
                     }
                 }
                 Message::Binary(_) => {
@@ -90,6 +91,7 @@ async fn handle_control_message(
     msg: ControlMessage,
     track_manager: &Arc<crate::tracks::TrackManager>,
     control_tx: &broadcast::Sender<ControlMessage>,
+    is_sender: bool,
 ) {
     match msg {
         ControlMessage::GetStatus => {
@@ -99,7 +101,8 @@ async fn handle_control_message(
         
         ControlMessage::ListDevices => {
             let devices = crate::audio::device::list_devices();
-            let _ = control_tx.send(ControlMessage::Devices(devices));
+            let resp = DevicesResponse { devices, is_receiver: !is_sender };
+            let _ = control_tx.send(ControlMessage::Devices(resp));
         }
         
         ControlMessage::CreateTrack(config) => {

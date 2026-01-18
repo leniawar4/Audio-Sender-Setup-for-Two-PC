@@ -95,8 +95,8 @@ CMAKE = None
  * OPUS_X86_PRESUME_SSE4_1, assume target CPU has SSE4.1 support (override runtime check).
  * OPUS_X86_PRESUME_AVX, assume target CPU has AVX support (override runtime check).
 
--- Configuring done (10.1s)
--- Generating done (0.1s)
+-- Configuring done (9.9s)
+-- Generating done (0.0s)
 -- Build files have been written to: C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build
 MSBuild version 17.14.23+b0019275e for .NET Framework
 

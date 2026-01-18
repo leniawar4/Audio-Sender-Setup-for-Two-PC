@@ -14,7 +14,6 @@ use crate::protocol::ControlMessage;
 use crate::tracks::TrackManager;
 use crate::ui::handlers;
 use crate::ui::websocket;
-
 /// Shared application state
 pub struct AppState {
     pub track_manager: Arc<TrackManager>,
@@ -63,8 +62,8 @@ impl WebServer {
             .allow_origin(Any)
             .allow_methods(Any)
             .allow_headers(Any);
-        
-        Router::new()
+
+        let mut router = Router::new()
             // API routes
             .route("/api/status", get(handlers::get_status))
             .route("/api/devices", get(handlers::get_devices))
@@ -79,10 +78,32 @@ impl WebServer {
             // WebSocket
             .route("/ws", get(websocket::websocket_handler))
             // Health check
-            .route("/health", get(|| async { "OK" }))
-            // Static files (if configured)
-            .layer(cors)
-            .with_state(self.state.clone())
+            .route("/health", get(|| async { "OK" }));
+
+            use axum::{http::StatusCode, routing::get_service};
+            use tower_http::services::ServeDir;
+
+            // Serve static files for all non-API/non-WS paths
+            let static_dir = self.config.static_dir.clone().unwrap_or_else(|| "static".into());
+            router = router.nest_service("/", get_service(ServeDir::new(static_dir.clone())));
+
+            // Fallback: serve index.html for any unknown path (SPA routing)
+            use axum::{response::Response, http::header, body::Body};
+            router = router.fallback(get(move || async move {
+                let path = format!("{}/index.html", static_dir.display());
+                match tokio::fs::read(&path).await {
+                    Ok(bytes) => Response::builder()
+                        .header(header::CONTENT_TYPE, "text/html; charset=utf-8")
+                        .body(Body::from(bytes))
+                        .unwrap(),
+                    Err(_) => Response::builder()
+                        .status(StatusCode::NOT_FOUND)
+                        .body(Body::from("index.html not found"))
+                        .unwrap(),
+                }
+            }));
+
+        router.layer(cors).with_state(self.state.clone())
     }
     
     /// Start the web server

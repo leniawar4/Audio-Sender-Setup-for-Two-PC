@@ -1,2 +1,0 @@
-fn(State<Arc<AppState>>, Json<TrackConfig>) -> impl Future<Output = (axum::http::StatusCode, Json<ApiResponse<u8>>)> {create_track}
-fn(State<Arc<AppState>>, Json<TrackConfig>) -> impl Future<Output = (axum::http::StatusCode, Json<ApiResponse<u8>>)> {create_track}: Handler<_, _>

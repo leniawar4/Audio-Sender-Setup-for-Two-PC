@@ -1,2 +1,0 @@
-fn(axum::extract::State<Arc<AppState>>, axum::extract::Path<u8>, Json<TrackConfigUpdate>) -> impl Future<Output = (axum::http::StatusCode, Json<ApiResponse<()>>)> {update_track}
-fn(axum::extract::State<Arc<AppState>>, axum::extract::Path<u8>, Json<TrackConfigUpdate>) -> impl Future<Output = (axum::http::StatusCode, Json<ApiResponse<()>>)> {update_track}: Handler<_, _>

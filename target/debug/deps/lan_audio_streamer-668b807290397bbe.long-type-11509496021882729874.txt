@@ -1,2 +1,0 @@
-fn(State<Arc<AppState>>, axum::extract::Path<u8>, Json<MuteRequest>) -> impl Future<Output = (axum::http::StatusCode, Json<ApiResponse<()>>)> {set_mute}
-fn(State<Arc<AppState>>, axum::extract::Path<u8>, Json<MuteRequest>) -> impl Future<Output = (axum::http::StatusCode, Json<ApiResponse<()>>)> {set_mute}: Handler<_, _>
