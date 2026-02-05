@@ -1,0 +1,5 @@
+C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/opus.dir
+C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/PACKAGE.dir
+C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/INSTALL.dir
+C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/ZERO_CHECK.dir

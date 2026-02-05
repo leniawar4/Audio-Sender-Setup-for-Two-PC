@@ -1,0 +1,10 @@
+^C:\USERS\AKALE\DESKTOP\WORL\AUDIO-SENDER-SECONDPC\TARGET\DEBUG\BUILD\AUDIOPUS_SYS-5F61458D584FB77C\OUT\BUILD\CMAKEFILES\910E959EC52BF92F98B6593743AE2412\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus -BC:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/Opus.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

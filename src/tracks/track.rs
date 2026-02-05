@@ -1,87 +1,92 @@
-//! Individual track representation
+//! Представление отдельного аудио-трека
+//!
+//! Каждый трек имеет собственный измеритель уровня со сглаживанием,
+//! что обеспечивает плавную визуализацию в UI без дёрганий.
 
 use std::sync::atomic::{AtomicBool, AtomicU64, AtomicU32, Ordering};
 use std::sync::Arc;
 use std::time::Instant;
 
 use crate::audio::buffer::{create_shared_buffer, SharedRingBuffer};
+use crate::audio::level_meter::SmoothLevelMeter;
 use crate::config::OpusConfig;
 use crate::error::TrackError;
 use crate::protocol::{TrackConfig, TrackStatus, TrackType};
 use crate::constants::RING_BUFFER_CAPACITY;
 
-/// Track state
+/// Состояние трека
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum TrackState {
-    /// Track is created but not started
+    /// Трек создан, но не запущен
     Stopped,
-    /// Track is starting
+    /// Трек запускается
     Starting,
-    /// Track is running
+    /// Трек работает
     Running,
-    /// Track is stopping
+    /// Трек останавливается
     Stopping,
-    /// Track encountered an error
+    /// Трек в состоянии ошибки
     Error,
 }
 
-/// Audio track (sender or receiver)
+/// Аудио-трек (отправитель или получатель)
 /// 
-/// Note: Encoders/decoders are NOT stored in Track to maintain thread safety.
-/// They should be created and managed separately in the audio processing pipeline.
+/// Примечание: Кодеры/декодеры НЕ хранятся в Track для потокобезопасности.
+/// Они должны создаваться и управляться отдельно в пайплайне обработки аудио.
 pub struct Track {
-    /// Track ID
+    /// ID трека
     pub id: u8,
     
-    /// Human-readable name
+    /// Человекочитаемое имя
     pub name: String,
     
-    /// Device ID (input for sender, output for receiver)
+    /// ID устройства (вход для отправителя, выход для получателя)
     pub device_id: String,
     
-    /// Track configuration
+    /// Конфигурация трека
     pub config: TrackConfig,
     
-    /// Current state
+    /// Текущее состояние
     state: TrackState,
     
-    /// Muted flag
+    /// Флаг приглушения
     muted: Arc<AtomicBool>,
     
-    /// Solo flag
+    /// Флаг соло
     solo: Arc<AtomicBool>,
     
-    /// Audio buffer
+    /// Аудио-буфер
     pub buffer: SharedRingBuffer,
     
-    /// Packets sent/received
+    /// Счётчик отправленных/полученных пакетов
     packets_count: Arc<AtomicU64>,
     
-    /// Packets lost
+    /// Счётчик потерянных пакетов
     packets_lost: Arc<AtomicU64>,
     
-    /// Current latency in microseconds (stored as AtomicU32 for thread safety)
+    /// Текущая задержка в микросекундах (AtomicU32 для потокобезопасности)
     latency_us: Arc<AtomicU32>,
     
-    /// Current jitter estimate in microseconds (stored as AtomicU32 for thread safety)
+    /// Текущая оценка джиттера в микросекундах (AtomicU32 для потокобезопасности)
     jitter_us: Arc<AtomicU32>,
     
-    /// Start time
+    /// Время запуска
     start_time: Option<Instant>,
     
-    /// Last error message
+    /// Последнее сообщение об ошибке
     last_error: Option<String>,
     
-    /// Peak level (dB) - stored as AtomicU32 in millibels for thread safety
-    peak_level_millibels: Arc<AtomicU32>,
+    /// Сглаженный измеритель уровня (заменяет peak_level_millibels)
+    /// Использует lock-free атомарные операции для плавной визуализации
+    level_meter: Arc<SmoothLevelMeter>,
 }
 
-// Track is now Send + Sync safe (no raw pointers)
+// Track теперь Send + Sync безопасен (нет сырых указателей)
 unsafe impl Send for Track {}
 unsafe impl Sync for Track {}
 
 impl Track {
-    /// Create a new track
+    /// Создать новый трек
     pub fn new(id: u8, config: TrackConfig) -> Self {
         Self {
             id,
@@ -98,7 +103,8 @@ impl Track {
             jitter_us: Arc::new(AtomicU32::new(0)),
             start_time: None,
             last_error: None,
-            peak_level_millibels: Arc::new(AtomicU32::new(0)), // 0 represents -96.0 dB
+            // Используем новый сглаженный измеритель уровня
+            level_meter: Arc::new(SmoothLevelMeter::new()),
         }
     }
     
@@ -196,73 +202,55 @@ impl Track {
         self.packets_count.load(Ordering::Relaxed)
     }
     
-    /// Get lost packet count
+    /// Получить количество потерянных пакетов
     pub fn packets_lost(&self) -> u64 {
         self.packets_lost.load(Ordering::Relaxed)
     }
     
-    /// Update peak level from samples
+    /// Обновить уровень из семплов (устаревший метод, для совместимости)
+    /// 
+    /// ПРИМЕЧАНИЕ: Теперь используется сглаженный измеритель уровня,
+    /// который обеспечивает плавную визуализацию без дёрганий.
     pub fn update_level(&mut self, samples: &[f32]) {
-        if samples.is_empty() {
-            return;
-        }
-        
-        let peak = samples.iter()
-            .map(|s| s.abs())
-            .fold(0.0f32, f32::max);
-        
-        // Convert to dB
-        let db = if peak > 0.0 {
-            20.0 * peak.log10()
-        } else {
-            -96.0
-        };
-        
-        // Get current level
-        let current_millibels = self.peak_level_millibels.load(Ordering::Relaxed);
-        let current_db = (current_millibels as f32 / 100.0) - 96.0;
-        
-        // Smooth the level (simple IIR filter)
-        let new_db = current_db * 0.9 + db * 0.1;
-        
-        // Store as millibels (add 96 to make positive, multiply by 100 for precision)
-        let new_millibels = ((new_db + 96.0) * 100.0) as u32;
-        self.peak_level_millibels.store(new_millibels, Ordering::Relaxed);
+        self.level_meter.update_from_samples(samples);
     }
     
-    /// Thread-safe update of peak level
+    /// Потокобезопасное обновление уровня (вызывается из аудио-потока)
+    /// 
+    /// Эта функция lock-free и безопасна для real-time контекста.
+    /// Использует экспоненциальное сглаживание с учётом времени.
     pub fn update_level_atomic(&self, samples: &[f32]) {
-        if samples.is_empty() {
-            return;
-        }
-        
-        let peak = samples.iter()
-            .map(|s| s.abs())
-            .fold(0.0f32, f32::max);
-        
-        // Convert to dB
-        let db = if peak > 0.0 {
-            20.0 * peak.log10()
-        } else {
-            -96.0
-        };
-        
-        // Get current level
-        let current_millibels = self.peak_level_millibels.load(Ordering::Relaxed);
-        let current_db = (current_millibels as f32 / 100.0) - 96.0;
-        
-        // Smooth the level (simple IIR filter)
-        let new_db = current_db * 0.9 + db * 0.1;
-        
-        // Store as millibels (add 96 to make positive, multiply by 100 for precision)
-        let new_millibels = ((new_db + 96.0) * 100.0) as u32;
-        self.peak_level_millibels.store(new_millibels, Ordering::Relaxed);
+        self.level_meter.update_from_samples(samples);
     }
     
-    /// Get current level in dB
+    /// Получить текущий уровень в dB (сглаженный)
+    /// 
+    /// Возвращает плавно интерполированное значение, подходящее для UI.
     pub fn level_db(&self) -> f32 {
-        let millibels = self.peak_level_millibels.load(Ordering::Relaxed);
-        (millibels as f32 / 100.0) - 96.0
+        // Обновляем состояние для UI (затухание без новых данных)
+        self.level_meter.tick_for_ui();
+        self.level_meter.level_db()
+    }
+    
+    /// Получить пиковый уровень в dB
+    pub fn peak_db(&self) -> f32 {
+        self.level_meter.peak_db()
+    }
+    
+    /// Получить нормализованный уровень (0.0 - 1.0)
+    pub fn level_normalized(&self) -> f32 {
+        self.level_meter.tick_for_ui();
+        self.level_meter.level_normalized()
+    }
+    
+    /// Получить нормализованный пик (0.0 - 1.0)
+    pub fn peak_normalized(&self) -> f32 {
+        self.level_meter.peak_normalized()
+    }
+    
+    /// Получить ссылку на измеритель уровня
+    pub fn level_meter(&self) -> &Arc<SmoothLevelMeter> {
+        &self.level_meter
     }
     
     /// Update latency measurement (in microseconds)
@@ -291,12 +279,12 @@ impl Track {
         self.last_error = Some(error);
     }
     
-    /// Get last error
+    /// Получить последнюю ошибку
     pub fn last_error(&self) -> Option<&str> {
         self.last_error.as_deref()
     }
     
-    /// Update configuration
+    /// Обновить конфигурацию трека
     pub fn update_config(&mut self, update: &crate::protocol::TrackConfigUpdate) -> Result<(), TrackError> {
         if let Some(ref name) = update.name {
             self.name = name.clone();
@@ -310,24 +298,29 @@ impl Track {
         
         if let Some(bitrate) = update.bitrate {
             self.config.bitrate = bitrate;
-            // Note: If encoder exists elsewhere, caller needs to update it
+            // Примечание: Если кодер существует в другом месте, вызывающий код должен его обновить
         }
         
         if let Some(frame_size_ms) = update.frame_size_ms {
             self.config.frame_size_ms = frame_size_ms;
-            // Note: Frame size change requires encoder recreation
+            // Примечание: Изменение размера кадра требует пересоздания кодера
         }
         
         if let Some(fec) = update.fec_enabled {
             self.config.fec_enabled = fec;
-            // Note: If encoder exists elsewhere, caller needs to update it
+            // Примечание: Если кодер существует в другом месте, вызывающий код должен его обновить
         }
         
         Ok(())
     }
     
-    /// Get track status for reporting
+    /// Получить статус трека для отчётности
+    /// 
+    /// Включает сглаженные значения уровня и пика для плавного отображения в UI.
     pub fn status(&self) -> TrackStatus {
+        // Обновляем измеритель для плавной анимации
+        self.level_meter.tick_for_ui();
+        
         TrackStatus {
             track_id: self.id,
             name: self.name.clone(),
@@ -342,7 +335,11 @@ impl Track {
             packets_lost: self.packets_lost(),
             current_latency_ms: self.latency_ms(),
             jitter_ms: self.jitter_ms(),
-            level_db: self.level_db(),
+            // Сглаженные значения для плавной визуализации
+            level_db: self.level_meter.level_db(),
+            peak_db: self.level_meter.peak_db(),
+            level_normalized: self.level_meter.level_normalized(),
+            peak_normalized: self.level_meter.peak_normalized(),
         }
     }
 }

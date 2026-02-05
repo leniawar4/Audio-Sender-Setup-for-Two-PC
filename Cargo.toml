@@ -1,19 +1,20 @@
 [package]
 name = "lan-audio-streamer"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Audio Streaming Team"]
-description = "Professional-grade low-latency LAN multi-track audio streaming"
+description = "Professional-grade low-latency LAN multi-track bidirectional audio streaming"
 license = "MIT"
 
 [features]
-default = ["sender", "receiver"]
+default = ["sender", "receiver", "peer"]
 sender = []
 receiver = []
+peer = []
 
 [dependencies]
 # Async runtime
-tokio = { version = "1.35", features = ["full", "rt-multi-thread", "sync", "time", "net", "macros"] }
+tokio = { version = "1.35", features = ["full", "rt-multi-thread", "sync", "time", "net", "macros", "signal"] }
 
 # Audio
 cpal = "0.15"
@@ -57,6 +58,9 @@ chrono = { version = "0.4", features = ["serde"] }
 toml = "0.8"
 directories = "5.0"
 
+# Ctrl+C handling (кросс-платформенный)
+ctrlc = "3.4"
+
 [target.'cfg(windows)'.dependencies]
 windows = { version = "0.52", features = [
     "Win32_Media_Audio",
@@ -78,6 +82,10 @@ path = "src/bin/sender.rs"
 [[bin]]
 name = "receiver"
 path = "src/bin/receiver.rs"
+
+[[bin]]
+name = "peer"
+path = "src/bin/peer.rs"
 
 [profile.release]
 opt-level = 3

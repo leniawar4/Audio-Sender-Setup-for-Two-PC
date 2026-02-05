@@ -432,18 +432,29 @@ header::after {
     position: relative;
 }
 
+/* Сглаженная анимация для заполнения измерителя уровня
+   Используем CSS transition для плавности, не зависящей от JS */
 .level-meter-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--success), var(--warning), var(--error));
-    transition: width 0.05s linear;
+    /* Плавный переход ширины - ключ к устранению дёрганья */
+    transition: width 0.08s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Аппаратное ускорение для плавности */
+    will-change: width;
+    transform: translateZ(0);
 }
 
+/* Плавная анимация пикового индикатора */
 .level-meter-peak {
     position: absolute;
     top: 0;
     width: 2px;
     height: 100%;
     background: rgba(255,255,255,0.9);
+    /* Более медленный переход для пика (удержание) */
+    transition: left 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: left;
+    transform: translateZ(0);
 }
 
 /* Devices */
@@ -647,91 +658,91 @@ header::after {
     <div class="logo">
         <div class="logo-icon">🎵</div>
         <div>
-            <div class="logo-text">LAN Audio Streamer</div>
-            <div class="logo-subtitle" id="modeLabel">Initializing…</div>
+            <div class="logo-text">LAN Аудио Стример</div>
+            <div class="logo-subtitle" id="modeLabel">Инициализация…</div>
         </div>
     </div>
     <div class="status-pill">
         <div class="status-indicator" id="connectionStatus"></div>
-        <span id="connectionText">Connecting…</span>
+        <span id="connectionText">Подключение…</span>
     </div>
 </header>
         
-        <!-- Global Stats -->
+        <!-- Глобальная статистика -->
         <div class="stats-bar" id="statsBar">
             <div class="stat-card">
-                <div class="stat-label">Total Packets</div>
+                <div class="stat-label">Всего пакетов</div>
                 <div class="stat-value" id="totalPackets">0</div>
-                <div class="stat-trend" id="packetsTrend">Waiting...</div>
+                <div class="stat-trend" id="packetsTrend">Ожидание...</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Data Transfer</div>
-                <div class="stat-value" id="dataTransfer">0<span class="unit">KB</span></div>
+                <div class="stat-label">Передано данных</div>
+                <div class="stat-value" id="dataTransfer">0<span class="unit">КБ</span></div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Avg Latency</div>
-                <div class="stat-value" id="avgLatency">--<span class="unit">ms</span></div>
+                <div class="stat-label">Ср. задержка</div>
+                <div class="stat-value" id="avgLatency">--<span class="unit">мс</span></div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Packet Loss</div>
+                <div class="stat-label">Потери пакетов</div>
                 <div class="stat-value" id="packetLoss">0<span class="unit">%</span></div>
             </div>
         </div>
         
-        <!-- Tracks Section -->
+        <!-- Секция треков -->
         <div class="section">
             <div class="section-header">
-                <h2 class="section-title">Audio Tracks</h2>
+                <h2 class="section-title">Аудио треки</h2>
                 <button class="btn btn-primary" onclick="showAddTrackModal()">
-                    <span>+</span> Add Track
+                    <span>+</span> Добавить трек
                 </button>
             </div>
             <div id="tracksContainer" class="tracks-grid">
                 <div class="empty-state">
                     <div class="empty-state-icon">🎧</div>
-                    <div class="empty-state-title">No tracks configured</div>
-                    <div class="empty-state-text">Click "Add Track" to start streaming audio</div>
+                    <div class="empty-state-title">Треки не настроены</div>
+                    <div class="empty-state-text">Нажмите "Добавить трек" для начала трансляции аудио</div>
                 </div>
             </div>
         </div>
         
-        <!-- Devices Section -->
+        <!-- Секция устройств -->
         <div class="section">
             <div class="section-header">
-                <h2 class="section-title">Audio Devices</h2>
+                <h2 class="section-title">Аудио устройства</h2>
                 <button class="btn btn-secondary" onclick="refreshDevices()">
-                    ↻ Refresh
+                    ↻ Обновить
                 </button>
             </div>
             <div id="devicesContainer" class="devices-grid">
                 <div class="empty-state loading" style="grid-column: 1/-1; padding: 40px;">
-                    Loading devices...
+                    Загрузка устройств...
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Add Track Modal -->
+    <!-- Модальное окно добавления трека -->
     <div class="modal-overlay" id="addTrackModal">
         <div class="modal">
             <div class="modal-header">
-                <h3 class="modal-title">Create New Track</h3>
+                <h3 class="modal-title">Создать новый трек</h3>
                 <button class="btn btn-icon btn-ghost" onclick="hideAddTrackModal()">✕</button>
             </div>
             <form id="addTrackForm" onsubmit="createTrack(event)">
                 <div class="form-group">
-                    <label class="form-label">Track Name</label>
-                    <input type="text" class="form-input" id="trackName" placeholder="My Audio Track" required>
+                    <label class="form-label">Название трека</label>
+                    <input type="text" class="form-input" id="trackName" placeholder="Мой аудио трек" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Audio Device</label>
+                    <label class="form-label">Аудио устройство</label>
                     <select class="form-select" id="trackDevice" required>
-                        <option value="">Select device...</option>
+                        <option value="">Выберите устройство...</option>
                     </select>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label">Bitrate</label>
+                        <label class="form-label">Битрейт</label>
                         <select class="form-select" id="trackBitrate">
                             <option value="32000">32 kbps</option>
                             <option value="64000">64 kbps</option>
@@ -743,62 +754,62 @@ header::after {
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Frame Size</label>
+                        <label class="form-label">Размер фрейма</label>
                         <select class="form-select" id="trackFrameSize">
-                            <option value="2.5">2.5 ms</option>
-                            <option value="5">5 ms</option>
-                            <option value="10" selected>10 ms</option>
-                            <option value="20">20 ms</option>
+                            <option value="2.5">2.5 мс</option>
+                            <option value="5">5 мс</option>
+                            <option value="10" selected>10 мс</option>
+                            <option value="20">20 мс</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label">Track Type</label>
+                        <label class="form-label">Тип трека</label>
                         <select class="form-select" id="trackType">
-                            <option value="Music">Music</option>
-                            <option value="Voice">Voice</option>
-                            <option value="LowLatency">Low Latency</option>
+                            <option value="Music">Музыка</option>
+                            <option value="Voice">Голос</option>
+                            <option value="LowLatency">Низкая задержка</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Channels</label>
+                        <label class="form-label">Каналы</label>
                         <select class="form-select" id="trackChannels">
-                            <option value="1">Mono</option>
-                            <option value="2" selected>Stereo</option>
+                            <option value="1">Моно</option>
+                            <option value="2" selected>Стерео</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-checkbox">
                         <input type="checkbox" id="trackFec">
-                        Enable FEC (Forward Error Correction)
+                        Включить FEC (упреждающая коррекция ошибок)
                     </label>
                 </div>
                 <div class="modal-actions">
-                    <button type="button" class="btn btn-secondary" onclick="hideAddTrackModal()">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Create Track</button>
+                    <button type="button" class="btn btn-secondary" onclick="hideAddTrackModal()">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Создать трек</button>
                 </div>
             </form>
         </div>
     </div>
     
-    <!-- Edit Track Modal -->
+    <!-- Модальное окно редактирования трека -->
     <div class="modal-overlay" id="editTrackModal">
         <div class="modal">
             <div class="modal-header">
-                <h3 class="modal-title">Edit Track</h3>
+                <h3 class="modal-title">Редактировать трек</h3>
                 <button class="btn btn-icon btn-ghost" onclick="hideEditTrackModal()">✕</button>
             </div>
             <form id="editTrackForm" onsubmit="saveTrackSettings(event)">
                 <input type="hidden" id="editTrackId">
                 <div class="form-group">
-                    <label class="form-label">Track Name</label>
-                    <input type="text" class="form-input" id="editTrackName" placeholder="Track name">
+                    <label class="form-label">Название трека</label>
+                    <input type="text" class="form-input" id="editTrackName" placeholder="Название трека">
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label">Bitrate</label>
+                        <label class="form-label">Битрейт</label>
                         <select class="form-select" id="editTrackBitrate">
                             <option value="32000">32 kbps</option>
                             <option value="64000">64 kbps</option>
@@ -810,31 +821,31 @@ header::after {
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Frame Size</label>
+                        <label class="form-label">Размер фрейма</label>
                         <select class="form-select" id="editTrackFrameSize">
-                            <option value="2.5">2.5 ms</option>
-                            <option value="5">5 ms</option>
-                            <option value="10">10 ms</option>
-                            <option value="20">20 ms</option>
+                            <option value="2.5">2.5 мс</option>
+                            <option value="5">5 мс</option>
+                            <option value="10">10 мс</option>
+                            <option value="20">20 мс</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-checkbox">
                         <input type="checkbox" id="editTrackFec">
-                        Enable FEC (Forward Error Correction)
+                        Включить FEC (упреждающая коррекция ошибок)
                     </label>
                 </div>
                 <div class="modal-actions">
-                    <button type="button" class="btn btn-secondary" onclick="hideEditTrackModal()">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" class="btn btn-secondary" onclick="hideEditTrackModal()">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
                 </div>
             </form>
         </div>
     </div>
 
     <script>
-        // State
+        // Состояние приложения
         let ws = null;
         let tracks = [];
         let devices = [];
@@ -842,27 +853,67 @@ header::after {
         let totalPackets = 0;
         let lastPacketCount = 0;
         let packetRate = 0;
-        let peakLevels = {};
         
-        // WebSocket
+        // Кэш сглаженных значений уровней для дополнительной интерполяции
+        // Обеспечивает плавность даже при задержках WebSocket
+        const levelCache = new Map();
+        
+        // Параметры сглаживания на клиенте (дополнительно к серверному)
+        const SMOOTHING = {
+            attackFactor: 0.35,   // Быстрая атака
+            releaseFactor: 0.08,  // Медленное затухание
+            minDb: -60,
+            maxDb: 0
+        };
+        
+        // Линейная интерполяция
+        function lerp(a, b, t) {
+            return a + (b - a) * Math.max(0, Math.min(1, t));
+        }
+        
+        // Получить или создать кэш уровня для трека
+        function getLevelCache(trackId) {
+            if (!levelCache.has(trackId)) {
+                levelCache.set(trackId, { level: -96, peak: -96, lastUpdate: Date.now() });
+            }
+            return levelCache.get(trackId);
+        }
+        
+        // Обновить кэшированный уровень с интерполяцией
+        function updateLevelCache(trackId, newLevel, newPeak) {
+            const cache = getLevelCache(trackId);
+            const factor = newLevel > cache.level ? SMOOTHING.attackFactor : SMOOTHING.releaseFactor;
+            cache.level = lerp(cache.level, newLevel, factor);
+            cache.peak = newPeak > cache.peak ? newPeak : lerp(cache.peak, newPeak, SMOOTHING.releaseFactor * 0.5);
+            cache.lastUpdate = Date.now();
+            return cache;
+        }
+        
+        // dB в проценты
+        function dbToPercent(db) {
+            const range = SMOOTHING.maxDb - SMOOTHING.minDb;
+            return Math.max(0, Math.min(100, ((db - SMOOTHING.minDb) / range) * 100));
+        }
+        
+        // WebSocket соединение
         function connect() {
             const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
             ws = new WebSocket(`${protocol}//${window.location.host}/ws`);
             
             ws.onopen = () => {
                 document.getElementById('connectionStatus').classList.add('connected');
-                document.getElementById('connectionText').textContent = 'Connected';
+                document.getElementById('connectionText').textContent = 'Подключено';
                 ws.send(JSON.stringify({ type: 'GetStatus' }));
                 ws.send(JSON.stringify({ type: 'ListDevices' }));
             };
             
             ws.onclose = () => {
                 document.getElementById('connectionStatus').classList.remove('connected');
-                document.getElementById('connectionText').textContent = 'Reconnecting...';
+                document.getElementById('connectionText').textContent = 'Переподключение...';
                 setTimeout(connect, 2000);
             };
             
-            ws.onerror = (err) => console.error('WebSocket error:', err);
+            ws.onerror = (err) => console.error('WebSocket ошибка:', err);
             
             ws.onmessage = (event) => {
                 try {
@@ -884,7 +935,7 @@ header::after {
                 case 'Devices':
                     devices = msg.data.devices || [];
                     isReceiver = msg.data.is_receiver;
-                    document.getElementById('modeLabel').textContent = isReceiver ? 'RECEIVER MODE' : 'SENDER MODE';
+                    document.getElementById('modeLabel').textContent = isReceiver ? 'РЕЖИМ ПРИЁМНИКА' : 'РЕЖИМ ОТПРАВИТЕЛЯ';
                     renderDevices();
                     updateDeviceSelects();
                     break;
@@ -948,8 +999,8 @@ header::after {
                 container.innerHTML = `
                     <div class="empty-state" style="grid-column: 1/-1;">
                         <div class="empty-state-icon">🎧</div>
-                        <div class="empty-state-title">No tracks configured</div>
-                        <div class="empty-state-text">Click "Add Track" to start streaming audio</div>
+                        <div class="empty-state-title">Нет настроенных треков</div>
+                        <div class="empty-state-text">Нажмите "Добавить трек" для начала трансляции</div>
                     </div>
                 `;
                 return;
@@ -959,35 +1010,38 @@ header::after {
                 const packets = track.packets_sent || track.packets_received || 0;
                 const latency = track.current_latency_ms || 0;
                 const jitter = track.jitter_ms || 0;
-                const level = track.level_db || -96;
                 
-                // Calculate meter width (dB to percentage, -60dB to 0dB range)
-                const meterWidth = Math.max(0, Math.min(100, (level + 60) / 60 * 100));
+                // Используем сглаженные значения с сервера
+                const serverLevel = track.level_db || -96;
+                const serverPeak = track.peak_db || -96;
                 
-                // Store peak for decay
-                if (!peakLevels[track.track_id]) peakLevels[track.track_id] = -96;
-                if (level > peakLevels[track.track_id]) {
-                    peakLevels[track.track_id] = level;
-                } else {
-                    peakLevels[track.track_id] = Math.max(level, peakLevels[track.track_id] - 1);
-                }
-                const peakWidth = Math.max(0, Math.min(100, (peakLevels[track.track_id] + 60) / 60 * 100));
+                // Дополнительная клиентская интерполяция для ещё большей плавности
+                const cache = updateLevelCache(track.track_id, serverLevel, serverPeak);
+                
+                // Используем нормализованные значения если они есть
+                const meterWidth = track.level_normalized !== undefined 
+                    ? (track.level_normalized * 100).toFixed(2)
+                    : dbToPercent(cache.level).toFixed(2);
+                    
+                const peakWidth = track.peak_normalized !== undefined
+                    ? (track.peak_normalized * 100).toFixed(2)
+                    : dbToPercent(cache.peak).toFixed(2);
                 
                 return `
                     <div class="track-card ${track.active ? 'active' : ''}">
                         <div class="track-header">
                             <div class="track-info">
                                 <div class="track-name">${escapeHtml(track.name)}</div>
-                                <span class="track-id">Track #${track.track_id}</span>
+                                <span class="track-id">Трек #${track.track_id}</span>
                             </div>
                             <div class="track-actions">
-                                <button class="btn btn-icon btn-ghost" onclick="showEditTrackModal(${track.track_id})" title="Settings">⚙️</button>
-                                <button class="btn btn-icon btn-ghost" onclick="deleteTrack(${track.track_id})" title="Delete">🗑️</button>
+                                <button class="btn btn-icon btn-ghost" onclick="showEditTrackModal(${track.track_id})" title="Настройки">⚙️</button>
+                                <button class="btn btn-icon btn-ghost" onclick="deleteTrack(${track.track_id})" title="Удалить">🗑️</button>
                             </div>
                         </div>
                         
                         <div class="device-select-wrapper">
-                            <label class="device-select-label">Audio Device</label>
+                            <label class="device-select-label">Аудио-устройство</label>
                             <select class="device-select" onchange="changeTrackDevice(${track.track_id}, this.value)">
                                 ${getDeviceOptions(track.device_id)}
                             </select>
@@ -995,25 +1049,25 @@ header::after {
                         
                         <div class="track-controls">
                             <button class="btn btn-secondary ${track.muted ? 'active' : ''}" onclick="toggleMute(${track.track_id}, ${!track.muted})">
-                                ${track.muted ? '🔇 Muted' : '🔊 Mute'}
+                                ${track.muted ? '🔇 Заглушен' : '🔊 Заглушить'}
                             </button>
                             <button class="btn btn-secondary ${track.solo ? 'active' : ''}" onclick="toggleSolo(${track.track_id}, ${!track.solo})">
-                                🎯 Solo
+                                🎯 Соло
                             </button>
                         </div>
                         
                         <div class="track-metrics">
                             <div class="metric">
                                 <div class="metric-value">${formatNumber(packets)}</div>
-                                <div class="metric-label">Packets</div>
+                                <div class="metric-label">Пакеты</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">${latency > 0 ? latency.toFixed(1) : '--'}</div>
-                                <div class="metric-label">Latency ms</div>
+                                <div class="metric-label">Задержка мс</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">${jitter > 0 ? jitter.toFixed(1) : '--'}</div>
-                                <div class="metric-label">Jitter ms</div>
+                                <div class="metric-label">Джиттер мс</div>
                             </div>
                         </div>
                         
@@ -1030,14 +1084,14 @@ header::after {
             const container = document.getElementById('devicesContainer');
             
             if (!devices || devices.length === 0) {
-                container.innerHTML = '<div class="empty-state" style="grid-column: 1/-1;">No audio devices found</div>';
+                container.innerHTML = '<div class="empty-state" style="grid-column: 1/-1;">Аудио устройства не найдены</div>';
                 return;
             }
             
             container.innerHTML = devices.map(device => {
                 const icon = device.is_input ? '🎤' : '🔊';
-                const type = device.is_input && device.is_output ? 'Input/Output' 
-                           : device.is_input ? 'Input' : 'Output';
+                const type = device.is_input && device.is_output ? 'Вход/Выход' 
+                           : device.is_input ? 'Вход' : 'Выход';
                 return `
                     <div class="device-card">
                         <div class="device-icon">${icon}</div>
@@ -1045,7 +1099,7 @@ header::after {
                             <div class="device-name">${escapeHtml(device.name)}</div>
                             <div class="device-type">${type}</div>
                         </div>
-                        ${device.is_default ? '<span class="device-badge">Default</span>' : ''}
+                        ${device.is_default ? '<span class="device-badge">По умолчанию</span>' : ''}
                     </div>
                 `;
             }).join('');
@@ -1057,8 +1111,8 @@ header::after {
                 ? devices.filter(d => d.is_output) 
                 : devices.filter(d => d.is_input);
             
-            select.innerHTML = '<option value="">Select device...</option>' +
-                filtered.map(d => `<option value="${d.id}">${escapeHtml(d.name)}${d.is_default ? ' (Default)' : ''}</option>`).join('');
+            select.innerHTML = '<option value="">Выберите устройство...</option>' +
+                filtered.map(d => `<option value="${d.id}">${escapeHtml(d.name)}${d.is_default ? ' (По умолч.)' : ''}</option>`).join('');
         }
         
         function getDeviceOptions(selectedId) {
@@ -1067,7 +1121,7 @@ header::after {
                 : devices.filter(d => d.is_input);
             
             return filtered.map(d => 
-                `<option value="${d.id}" ${d.id === selectedId ? 'selected' : ''}>${escapeHtml(d.name)}${d.is_default ? ' (Default)' : ''}</option>`
+                `<option value="${d.id}" ${d.id === selectedId ? 'selected' : ''}>${escapeHtml(d.name)}${d.is_default ? ' (По умолч.)' : ''}</option>`
             ).join('');
         }
         
@@ -1140,7 +1194,7 @@ header::after {
         }
         
         function deleteTrack(trackId) {
-            if (confirm('Delete this track?')) {
+            if (confirm('Удалить этот трек?')) {
                 ws.send(JSON.stringify({ type: 'RemoveTrack', data: { track_id: trackId } }));
                 setTimeout(() => ws.send(JSON.stringify({ type: 'GetStatus' })), 500);
             }

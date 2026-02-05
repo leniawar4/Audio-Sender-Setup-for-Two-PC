@@ -1,0 +1,26 @@
+running: "\\\\?\\C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" "C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus" "-B" "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build" "-G" "Visual Studio 17 2022" "-Thost=x64" "-Ax64" "-DCMAKE_INSTALL_PREFIX=C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out" "-DCMAKE_C_FLAGS= -nologo -MD -Brepro -W0" "-DCMAKE_C_FLAGS_RELWITHDEBINFO= -nologo -MD -Brepro -W0" "-DCMAKE_CXX_FLAGS= -nologo -MD -Brepro -W0" "-DCMAKE_CXX_FLAGS_RELWITHDEBINFO= -nologo -MD -Brepro -W0" "-DCMAKE_ASM_FLAGS= -nologo -MD -Brepro -W0" "-DCMAKE_ASM_FLAGS_RELWITHDEBINFO= -nologo -MD -Brepro -W0" "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+CMake Warning at cmake/OpusPackageVersion.cmake:61 (message):
+  Could not get package version.
+Call Stack (most recent call first):
+  CMakeLists.txt:5 (get_package_version)
+
+
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_ASM_FLAGS
+    CMAKE_ASM_FLAGS_RELWITHDEBINFO
+    CMAKE_CXX_FLAGS
+    CMAKE_CXX_FLAGS_RELWITHDEBINFO
+
+
+running: "\\\\?\\C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" "--build" "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build" "--target" "install" "--config" "RelWithDebInfo" "--parallel" "16"

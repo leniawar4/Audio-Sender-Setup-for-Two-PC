@@ -295,7 +295,7 @@ impl Default for TrackType {
     }
 }
 
-/// Track status information
+/// Информация о статусе трека
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TrackStatus {
     pub track_id: u8,
@@ -311,7 +311,14 @@ pub struct TrackStatus {
     pub packets_lost: u64,
     pub current_latency_ms: f32,
     pub jitter_ms: f32,
+    /// Текущий сглаженный уровень в dB
     pub level_db: f32,
+    /// Пиковый уровень в dB (с удержанием)
+    pub peak_db: f32,
+    /// Нормализованный уровень (0.0 - 1.0) для UI
+    pub level_normalized: f32,
+    /// Нормализованный пик (0.0 - 1.0) для UI
+    pub peak_normalized: f32,
 }
 
 /// Audio device information

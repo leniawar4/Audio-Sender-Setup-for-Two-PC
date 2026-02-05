@@ -1,0 +1,2043 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      The system is: Windows - 10.0.26200 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: -nologo;-MD;-Brepro;-W0
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.23+b0019275e for .NET Framework
+      Build started 2/5/2026 6:36:06 PM.
+      
+      Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.72
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/3.31.6-msvc6/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-ui84vy"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-ui84vy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-ui84vy'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2b46b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:07 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ui84vy\\cmTC_2b46b.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_2b46b.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ui84vy\\Debug\\".
+          Creating directory "cmTC_2b46b.dir\\Debug\\cmTC_2b46b.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_2b46b.dir\\Debug\\cmTC_2b46b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_2b46b.dir\\Debug\\cmTC_2b46b.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2b46b.dir\\Debug\\\\" /Fd"cmTC_2b46b.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ui84vy\\Debug\\cmTC_2b46b.exe" /INCREMENTAL /ILK:"cmTC_2b46b.dir\\Debug\\cmTC_2b46b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-ui84vy/Debug/cmTC_2b46b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-ui84vy/Debug/cmTC_2b46b.lib" /MACHINE:X64  /machine:x64 cmTC_2b46b.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_2b46b.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ui84vy\\Debug\\cmTC_2b46b.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_2b46b.dir\\Debug\\cmTC_2b46b.tlog\\unsuccessfulbuild".
+          Touching "cmTC_2b46b.dir\\Debug\\cmTC_2b46b.tlog\\cmTC_2b46b.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ui84vy\\cmTC_2b46b.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.64
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35217.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "cmake/OpusConfig.cmake:19 (check_library_exists)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for floor in m"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-u1j7x7"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-u1j7x7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_LIBM"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-u1j7x7'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_382f1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:08 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u1j7x7\\cmTC_382f1.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_382f1.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u1j7x7\\Debug\\".
+          Creating directory "cmTC_382f1.dir\\Debug\\cmTC_382f1.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_382f1.dir\\Debug\\cmTC_382f1.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_382f1.dir\\Debug\\cmTC_382f1.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=floor /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_382f1.dir\\Debug\\\\" /Fd"cmTC_382f1.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u1j7x7\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u1j7x7\\Debug\\cmTC_382f1.exe" /INCREMENTAL /ILK:"cmTC_382f1.dir\\Debug\\cmTC_382f1.ilk" /NOLOGO m.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-u1j7x7/Debug/cmTC_382f1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-u1j7x7/Debug/cmTC_382f1.lib" /MACHINE:X64  /machine:x64 cmTC_382f1.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'm.lib' [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u1j7x7\\cmTC_382f1.vcxproj]
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u1j7x7\\cmTC_382f1.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u1j7x7\\cmTC_382f1.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'm.lib' [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u1j7x7\\cmTC_382f1.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.44
+        
+      exitCode: 1
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      The system is: Windows - 10.0.26200 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: -nologo;-MD;-Brepro;-W0
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.23+b0019275e for .NET Framework
+      Build started 2/5/2026 6:36:10 PM.
+      
+      Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.47
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/3.31.6-msvc6/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-xu9xhx"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-xu9xhx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-xu9xhx'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c7148.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:11 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xu9xhx\\cmTC_c7148.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_c7148.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xu9xhx\\Debug\\".
+          Creating directory "cmTC_c7148.dir\\Debug\\cmTC_c7148.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_c7148.dir\\Debug\\cmTC_c7148.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_c7148.dir\\Debug\\cmTC_c7148.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c7148.dir\\Debug\\\\" /Fd"cmTC_c7148.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xu9xhx\\Debug\\cmTC_c7148.exe" /INCREMENTAL /ILK:"cmTC_c7148.dir\\Debug\\cmTC_c7148.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-xu9xhx/Debug/cmTC_c7148.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-xu9xhx/Debug/cmTC_c7148.lib" /MACHINE:X64  /machine:x64 cmTC_c7148.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_c7148.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xu9xhx\\Debug\\cmTC_c7148.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_c7148.dir\\Debug\\cmTC_c7148.tlog\\unsuccessfulbuild".
+          Touching "cmTC_c7148.dir\\Debug\\cmTC_c7148.tlog\\cmTC_c7148.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xu9xhx\\cmTC_c7148.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.52
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35217.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "cmake/OpusConfig.cmake:19 (check_library_exists)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for floor in m"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-dehdvm"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-dehdvm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_LIBM"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-dehdvm'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9c9b0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:11 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dehdvm\\cmTC_9c9b0.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_9c9b0.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dehdvm\\Debug\\".
+          Creating directory "cmTC_9c9b0.dir\\Debug\\cmTC_9c9b0.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_9c9b0.dir\\Debug\\cmTC_9c9b0.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_9c9b0.dir\\Debug\\cmTC_9c9b0.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=floor /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9c9b0.dir\\Debug\\\\" /Fd"cmTC_9c9b0.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dehdvm\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dehdvm\\Debug\\cmTC_9c9b0.exe" /INCREMENTAL /ILK:"cmTC_9c9b0.dir\\Debug\\cmTC_9c9b0.ilk" /NOLOGO m.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-dehdvm/Debug/cmTC_9c9b0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-dehdvm/Debug/cmTC_9c9b0.lib" /MACHINE:X64  /machine:x64 cmTC_9c9b0.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'm.lib' [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dehdvm\\cmTC_9c9b0.vcxproj]
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dehdvm\\cmTC_9c9b0.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dehdvm\\cmTC_9c9b0.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'm.lib' [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dehdvm\\cmTC_9c9b0.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.37
+        
+      exitCode: 1
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      The system is: Windows - 10.0.26200 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: -nologo;-MD;-Brepro;-W0
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.23+b0019275e for .NET Framework
+      Build started 2/5/2026 6:36:13 PM.
+      
+      Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.38
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/3.31.6-msvc6/CompilerIdC/CompilerIdC.exe
+      
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      The system is: Windows - 10.0.26200 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: -nologo;-MD;-Brepro;-W0
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.23+b0019275e for .NET Framework
+      Build started 2/5/2026 6:36:15 PM.
+      
+      Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.39
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/3.31.6-msvc6/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-afkmp7"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-afkmp7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-afkmp7'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_77bbb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:15 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-afkmp7\\cmTC_77bbb.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_77bbb.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-afkmp7\\Debug\\".
+          Creating directory "cmTC_77bbb.dir\\Debug\\cmTC_77bbb.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_77bbb.dir\\Debug\\cmTC_77bbb.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_77bbb.dir\\Debug\\cmTC_77bbb.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_77bbb.dir\\Debug\\\\" /Fd"cmTC_77bbb.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-afkmp7\\Debug\\cmTC_77bbb.exe" /INCREMENTAL /ILK:"cmTC_77bbb.dir\\Debug\\cmTC_77bbb.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-afkmp7/Debug/cmTC_77bbb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-afkmp7/Debug/cmTC_77bbb.lib" /MACHINE:X64  /machine:x64 cmTC_77bbb.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_77bbb.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-afkmp7\\Debug\\cmTC_77bbb.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_77bbb.dir\\Debug\\cmTC_77bbb.tlog\\unsuccessfulbuild".
+          Touching "cmTC_77bbb.dir\\Debug\\cmTC_77bbb.tlog\\cmTC_77bbb.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-afkmp7\\cmTC_77bbb.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.36
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35217.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      The system is: Windows - 10.0.26200 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: -nologo;-MD;-Brepro;-W0
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.23+b0019275e for .NET Framework
+      Build started 2/5/2026 6:36:17 PM.
+      
+      Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.36
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/3.31.6-msvc6/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-h7p63b"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-h7p63b"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-h7p63b'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6668a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:17 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h7p63b\\cmTC_6668a.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_6668a.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h7p63b\\Debug\\".
+          Creating directory "cmTC_6668a.dir\\Debug\\cmTC_6668a.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_6668a.dir\\Debug\\cmTC_6668a.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_6668a.dir\\Debug\\cmTC_6668a.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6668a.dir\\Debug\\\\" /Fd"cmTC_6668a.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h7p63b\\Debug\\cmTC_6668a.exe" /INCREMENTAL /ILK:"cmTC_6668a.dir\\Debug\\cmTC_6668a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-h7p63b/Debug/cmTC_6668a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-h7p63b/Debug/cmTC_6668a.lib" /MACHINE:X64  /machine:x64 cmTC_6668a.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_6668a.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h7p63b\\Debug\\cmTC_6668a.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_6668a.dir\\Debug\\cmTC_6668a.tlog\\unsuccessfulbuild".
+          Touching "cmTC_6668a.dir\\Debug\\cmTC_6668a.tlog\\cmTC_6668a.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h7p63b\\cmTC_6668a.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.37
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35217.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "cmake/OpusConfig.cmake:19 (check_library_exists)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for floor in m"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-wd94fq"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-wd94fq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_LIBM"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-wd94fq'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_bbe0b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:18 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wd94fq\\cmTC_bbe0b.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_bbe0b.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wd94fq\\Debug\\".
+          Creating directory "cmTC_bbe0b.dir\\Debug\\cmTC_bbe0b.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_bbe0b.dir\\Debug\\cmTC_bbe0b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_bbe0b.dir\\Debug\\cmTC_bbe0b.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=floor /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bbe0b.dir\\Debug\\\\" /Fd"cmTC_bbe0b.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wd94fq\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wd94fq\\Debug\\cmTC_bbe0b.exe" /INCREMENTAL /ILK:"cmTC_bbe0b.dir\\Debug\\cmTC_bbe0b.ilk" /NOLOGO m.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-wd94fq/Debug/cmTC_bbe0b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-wd94fq/Debug/cmTC_bbe0b.lib" /MACHINE:X64  /machine:x64 cmTC_bbe0b.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'm.lib' [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wd94fq\\cmTC_bbe0b.vcxproj]
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wd94fq\\cmTC_bbe0b.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wd94fq\\cmTC_bbe0b.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'm.lib' [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wd94fq\\cmTC_bbe0b.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.29
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/CFeatureCheck.cmake:30 (try_compile)"
+      - "cmake/OpusConfig.cmake:25 (c_feature_check)"
+      - "CMakeLists.txt:11 (include)"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "COMPILE_VLA_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_3acc2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:18 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_3acc2.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_3acc2.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\Debug\\".
+          Creating directory "cmTC_3acc2.dir\\Debug\\cmTC_3acc2.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_3acc2.dir\\Debug\\cmTC_3acc2.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_3acc2.dir\\Debug\\cmTC_3acc2.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3acc2.dir\\Debug\\\\" /Fd"cmTC_3acc2.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c"
+          vla.c
+        C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,12): error C2057: expected constant expression [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_3acc2.vcxproj]
+        C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,12): error C2466: cannot allocate an array of constant size 0 [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_3acc2.vcxproj]
+        C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,10): error C2133: 'a': unknown size [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_3acc2.vcxproj]
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_3acc2.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_3acc2.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,12): error C2057: expected constant expression [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_3acc2.vcxproj]
+          C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,12): error C2466: cannot allocate an array of constant size 0 [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_3acc2.vcxproj]
+          C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,10): error C2133: 'a': unknown size [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_3acc2.vcxproj]
+        
+            0 Warning(s)
+            3 Error(s)
+        
+        Time Elapsed 00:00:00.20
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/OpusConfig.cmake:28 (check_include_file)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for alloca.h"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-7g502j"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-7g502j"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_ALLOCA_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-7g502j'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_eea4e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:19 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7g502j\\cmTC_eea4e.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_eea4e.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7g502j\\Debug\\".
+          Creating directory "cmTC_eea4e.dir\\Debug\\cmTC_eea4e.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_eea4e.dir\\Debug\\cmTC_eea4e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_eea4e.dir\\Debug\\cmTC_eea4e.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_eea4e.dir\\Debug\\\\" /Fd"cmTC_eea4e.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7g502j\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7g502j\\CheckIncludeFile.c(1,10): error C1083: Cannot open include file: 'alloca.h': No such file or directory [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7g502j\\cmTC_eea4e.vcxproj]
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7g502j\\cmTC_eea4e.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7g502j\\cmTC_eea4e.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7g502j\\CheckIncludeFile.c(1,10): error C1083: Cannot open include file: 'alloca.h': No such file or directory [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7g502j\\cmTC_eea4e.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.21
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "cmake/OpusConfig.cmake:35 (check_symbol_exists)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for alloca"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-vm2smn"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-vm2smn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "USE_ALLOCA_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-vm2smn'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d31fa.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:19 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vm2smn\\cmTC_d31fa.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_d31fa.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vm2smn\\Debug\\".
+          Creating directory "cmTC_d31fa.dir\\Debug\\cmTC_d31fa.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_d31fa.dir\\Debug\\cmTC_d31fa.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_d31fa.dir\\Debug\\cmTC_d31fa.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d31fa.dir\\Debug\\\\" /Fd"cmTC_d31fa.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vm2smn\\CheckSymbolExists.c"
+          CheckSymbolExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vm2smn\\Debug\\cmTC_d31fa.exe" /INCREMENTAL /ILK:"cmTC_d31fa.dir\\Debug\\cmTC_d31fa.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-vm2smn/Debug/cmTC_d31fa.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-vm2smn/Debug/cmTC_d31fa.lib" /MACHINE:X64  /machine:x64 cmTC_d31fa.dir\\Debug\\CheckSymbolExists.obj
+          cmTC_d31fa.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vm2smn\\Debug\\cmTC_d31fa.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_d31fa.dir\\Debug\\cmTC_d31fa.tlog\\unsuccessfulbuild".
+          Touching "cmTC_d31fa.dir\\Debug\\cmTC_d31fa.tlog\\cmTC_d31fa.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vm2smn\\cmTC_d31fa.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.40
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "cmake/OpusConfig.cmake:39 (check_function_exists)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for lrintf"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-p5wcw9"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-p5wcw9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_LRINTF"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-p5wcw9'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a1d29.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:20 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p5wcw9\\cmTC_a1d29.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_a1d29.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p5wcw9\\Debug\\".
+          Creating directory "cmTC_a1d29.dir\\Debug\\cmTC_a1d29.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_a1d29.dir\\Debug\\cmTC_a1d29.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_a1d29.dir\\Debug\\cmTC_a1d29.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=lrintf /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a1d29.dir\\Debug\\\\" /Fd"cmTC_a1d29.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p5wcw9\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p5wcw9\\Debug\\cmTC_a1d29.exe" /INCREMENTAL /ILK:"cmTC_a1d29.dir\\Debug\\cmTC_a1d29.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-p5wcw9/Debug/cmTC_a1d29.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-p5wcw9/Debug/cmTC_a1d29.lib" /MACHINE:X64  /machine:x64 cmTC_a1d29.dir\\Debug\\CheckFunctionExists.obj
+          cmTC_a1d29.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p5wcw9\\Debug\\cmTC_a1d29.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_a1d29.dir\\Debug\\cmTC_a1d29.tlog\\unsuccessfulbuild".
+          Touching "cmTC_a1d29.dir\\Debug\\cmTC_a1d29.tlog\\cmTC_a1d29.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p5wcw9\\cmTC_a1d29.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "cmake/OpusConfig.cmake:40 (check_function_exists)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for lrint"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-hswwjc"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-hswwjc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_LRINT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-hswwjc'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_ac411.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:20 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hswwjc\\cmTC_ac411.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_ac411.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hswwjc\\Debug\\".
+          Creating directory "cmTC_ac411.dir\\Debug\\cmTC_ac411.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_ac411.dir\\Debug\\cmTC_ac411.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_ac411.dir\\Debug\\cmTC_ac411.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=lrint /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ac411.dir\\Debug\\\\" /Fd"cmTC_ac411.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hswwjc\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hswwjc\\Debug\\cmTC_ac411.exe" /INCREMENTAL /ILK:"cmTC_ac411.dir\\Debug\\cmTC_ac411.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-hswwjc/Debug/cmTC_ac411.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-hswwjc/Debug/cmTC_ac411.lib" /MACHINE:X64  /machine:x64 cmTC_ac411.dir\\Debug\\CheckFunctionExists.obj
+          cmTC_ac411.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hswwjc\\Debug\\cmTC_ac411.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_ac411.dir\\Debug\\cmTC_ac411.tlog\\unsuccessfulbuild".
+          Touching "cmTC_ac411.dir\\Debug\\cmTC_ac411.tlog\\cmTC_ac411.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hswwjc\\cmTC_ac411.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/OpusFunctions.cmake:146 (check_include_file)"
+      - "cmake/OpusConfig.cmake:53 (opus_supports_cpu_detection)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for intrin.h"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-0mtafi"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-0mtafi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_INTRIN_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-0mtafi'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8562b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:21 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mtafi\\cmTC_8562b.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_8562b.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mtafi\\Debug\\".
+          Creating directory "cmTC_8562b.dir\\Debug\\cmTC_8562b.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_8562b.dir\\Debug\\cmTC_8562b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_8562b.dir\\Debug\\cmTC_8562b.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8562b.dir\\Debug\\\\" /Fd"cmTC_8562b.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mtafi\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mtafi\\Debug\\cmTC_8562b.exe" /INCREMENTAL /ILK:"cmTC_8562b.dir\\Debug\\cmTC_8562b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-0mtafi/Debug/cmTC_8562b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-0mtafi/Debug/cmTC_8562b.lib" /MACHINE:X64  /machine:x64 cmTC_8562b.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_8562b.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mtafi\\Debug\\cmTC_8562b.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_8562b.dir\\Debug\\cmTC_8562b.tlog\\unsuccessfulbuild".
+          Touching "cmTC_8562b.dir\\Debug\\cmTC_8562b.tlog\\cmTC_8562b.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0mtafi\\cmTC_8562b.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.34
+        
+      exitCode: 0
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      The system is: Windows - 10.0.26200 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: -nologo;-MD;-Brepro;-W0
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.23+b0019275e for .NET Framework
+      Build started 2/5/2026 6:36:22 PM.
+      
+      Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.35
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/3.31.6-msvc6/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-0cqmwx"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-0cqmwx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-0cqmwx'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_12a2d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:23 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0cqmwx\\cmTC_12a2d.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_12a2d.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0cqmwx\\Debug\\".
+          Creating directory "cmTC_12a2d.dir\\Debug\\cmTC_12a2d.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_12a2d.dir\\Debug\\cmTC_12a2d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_12a2d.dir\\Debug\\cmTC_12a2d.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_12a2d.dir\\Debug\\\\" /Fd"cmTC_12a2d.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0cqmwx\\Debug\\cmTC_12a2d.exe" /INCREMENTAL /ILK:"cmTC_12a2d.dir\\Debug\\cmTC_12a2d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-0cqmwx/Debug/cmTC_12a2d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-0cqmwx/Debug/cmTC_12a2d.lib" /MACHINE:X64  /machine:x64 cmTC_12a2d.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_12a2d.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0cqmwx\\Debug\\cmTC_12a2d.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_12a2d.dir\\Debug\\cmTC_12a2d.tlog\\unsuccessfulbuild".
+          Touching "cmTC_12a2d.dir\\Debug\\cmTC_12a2d.tlog\\cmTC_12a2d.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0cqmwx\\cmTC_12a2d.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.34
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35217.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "cmake/OpusConfig.cmake:19 (check_library_exists)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for floor in m"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-lu6idd"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-lu6idd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_LIBM"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-lu6idd'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_96411.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:23 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lu6idd\\cmTC_96411.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_96411.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lu6idd\\Debug\\".
+          Creating directory "cmTC_96411.dir\\Debug\\cmTC_96411.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_96411.dir\\Debug\\cmTC_96411.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_96411.dir\\Debug\\cmTC_96411.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=floor /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_96411.dir\\Debug\\\\" /Fd"cmTC_96411.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lu6idd\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lu6idd\\Debug\\cmTC_96411.exe" /INCREMENTAL /ILK:"cmTC_96411.dir\\Debug\\cmTC_96411.ilk" /NOLOGO m.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-lu6idd/Debug/cmTC_96411.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-lu6idd/Debug/cmTC_96411.lib" /MACHINE:X64  /machine:x64 cmTC_96411.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'm.lib' [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lu6idd\\cmTC_96411.vcxproj]
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lu6idd\\cmTC_96411.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lu6idd\\cmTC_96411.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'm.lib' [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lu6idd\\cmTC_96411.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.28
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/CFeatureCheck.cmake:30 (try_compile)"
+      - "cmake/OpusConfig.cmake:25 (c_feature_check)"
+      - "CMakeLists.txt:11 (include)"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "COMPILE_VLA_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_729f8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:24 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_729f8.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_729f8.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\Debug\\".
+          Creating directory "cmTC_729f8.dir\\Debug\\cmTC_729f8.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_729f8.dir\\Debug\\cmTC_729f8.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_729f8.dir\\Debug\\cmTC_729f8.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_729f8.dir\\Debug\\\\" /Fd"cmTC_729f8.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c"
+          vla.c
+        C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,12): error C2057: expected constant expression [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_729f8.vcxproj]
+        C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,12): error C2466: cannot allocate an array of constant size 0 [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_729f8.vcxproj]
+        C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,10): error C2133: 'a': unknown size [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_729f8.vcxproj]
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_729f8.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_729f8.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,12): error C2057: expected constant expression [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_729f8.vcxproj]
+          C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,12): error C2466: cannot allocate an array of constant size 0 [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_729f8.vcxproj]
+          C:\\Users\\akale\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\audiopus_sys-0.2.2\\opus\\cmake\\vla.c(3,10): error C2133: 'a': unknown size [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeTmp\\cmTC_729f8.vcxproj]
+        
+            0 Warning(s)
+            3 Error(s)
+        
+        Time Elapsed 00:00:00.20
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/OpusConfig.cmake:28 (check_include_file)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for alloca.h"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-vwsvzc"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-vwsvzc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_ALLOCA_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-vwsvzc'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f9ac9.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:24 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vwsvzc\\cmTC_f9ac9.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_f9ac9.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vwsvzc\\Debug\\".
+          Creating directory "cmTC_f9ac9.dir\\Debug\\cmTC_f9ac9.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_f9ac9.dir\\Debug\\cmTC_f9ac9.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_f9ac9.dir\\Debug\\cmTC_f9ac9.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f9ac9.dir\\Debug\\\\" /Fd"cmTC_f9ac9.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vwsvzc\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vwsvzc\\CheckIncludeFile.c(1,10): error C1083: Cannot open include file: 'alloca.h': No such file or directory [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vwsvzc\\cmTC_f9ac9.vcxproj]
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vwsvzc\\cmTC_f9ac9.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vwsvzc\\cmTC_f9ac9.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vwsvzc\\CheckIncludeFile.c(1,10): error C1083: Cannot open include file: 'alloca.h': No such file or directory [C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vwsvzc\\cmTC_f9ac9.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.20
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "cmake/OpusConfig.cmake:35 (check_symbol_exists)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for alloca"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-rujlxy"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-rujlxy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "USE_ALLOCA_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-rujlxy'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_85677.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:24 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rujlxy\\cmTC_85677.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_85677.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rujlxy\\Debug\\".
+          Creating directory "cmTC_85677.dir\\Debug\\cmTC_85677.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_85677.dir\\Debug\\cmTC_85677.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_85677.dir\\Debug\\cmTC_85677.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_85677.dir\\Debug\\\\" /Fd"cmTC_85677.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rujlxy\\CheckSymbolExists.c"
+          CheckSymbolExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rujlxy\\Debug\\cmTC_85677.exe" /INCREMENTAL /ILK:"cmTC_85677.dir\\Debug\\cmTC_85677.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-rujlxy/Debug/cmTC_85677.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-rujlxy/Debug/cmTC_85677.lib" /MACHINE:X64  /machine:x64 cmTC_85677.dir\\Debug\\CheckSymbolExists.obj
+          cmTC_85677.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rujlxy\\Debug\\cmTC_85677.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_85677.dir\\Debug\\cmTC_85677.tlog\\unsuccessfulbuild".
+          Touching "cmTC_85677.dir\\Debug\\cmTC_85677.tlog\\cmTC_85677.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rujlxy\\cmTC_85677.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.35
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "cmake/OpusConfig.cmake:39 (check_function_exists)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for lrintf"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-r413j3"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-r413j3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_LRINTF"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-r413j3'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_983e6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:25 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r413j3\\cmTC_983e6.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_983e6.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r413j3\\Debug\\".
+          Creating directory "cmTC_983e6.dir\\Debug\\cmTC_983e6.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_983e6.dir\\Debug\\cmTC_983e6.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_983e6.dir\\Debug\\cmTC_983e6.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=lrintf /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_983e6.dir\\Debug\\\\" /Fd"cmTC_983e6.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r413j3\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r413j3\\Debug\\cmTC_983e6.exe" /INCREMENTAL /ILK:"cmTC_983e6.dir\\Debug\\cmTC_983e6.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-r413j3/Debug/cmTC_983e6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-r413j3/Debug/cmTC_983e6.lib" /MACHINE:X64  /machine:x64 cmTC_983e6.dir\\Debug\\CheckFunctionExists.obj
+          cmTC_983e6.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r413j3\\Debug\\cmTC_983e6.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_983e6.dir\\Debug\\cmTC_983e6.tlog\\unsuccessfulbuild".
+          Touching "cmTC_983e6.dir\\Debug\\cmTC_983e6.tlog\\cmTC_983e6.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r413j3\\cmTC_983e6.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.35
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "cmake/OpusConfig.cmake:40 (check_function_exists)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for lrint"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-st3pye"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-st3pye"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_LRINT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-st3pye'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_3fab6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:25 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-st3pye\\cmTC_3fab6.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_3fab6.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-st3pye\\Debug\\".
+          Creating directory "cmTC_3fab6.dir\\Debug\\cmTC_3fab6.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_3fab6.dir\\Debug\\cmTC_3fab6.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_3fab6.dir\\Debug\\cmTC_3fab6.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D CHECK_FUNCTION_EXISTS=lrint /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3fab6.dir\\Debug\\\\" /Fd"cmTC_3fab6.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-st3pye\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-st3pye\\Debug\\cmTC_3fab6.exe" /INCREMENTAL /ILK:"cmTC_3fab6.dir\\Debug\\cmTC_3fab6.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-st3pye/Debug/cmTC_3fab6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-st3pye/Debug/cmTC_3fab6.lib" /MACHINE:X64  /machine:x64 cmTC_3fab6.dir\\Debug\\CheckFunctionExists.obj
+          cmTC_3fab6.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-st3pye\\Debug\\cmTC_3fab6.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_3fab6.dir\\Debug\\cmTC_3fab6.tlog\\unsuccessfulbuild".
+          Touching "cmTC_3fab6.dir\\Debug\\cmTC_3fab6.tlog\\cmTC_3fab6.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-st3pye\\cmTC_3fab6.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.34
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/OpusFunctions.cmake:146 (check_include_file)"
+      - "cmake/OpusConfig.cmake:53 (opus_supports_cpu_detection)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for intrin.h"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-n0t333"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-n0t333"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_INTRIN_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-n0t333'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d71ef.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:26 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n0t333\\cmTC_d71ef.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_d71ef.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n0t333\\Debug\\".
+          Creating directory "cmTC_d71ef.dir\\Debug\\cmTC_d71ef.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_d71ef.dir\\Debug\\cmTC_d71ef.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_d71ef.dir\\Debug\\cmTC_d71ef.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d71ef.dir\\Debug\\\\" /Fd"cmTC_d71ef.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n0t333\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n0t333\\Debug\\cmTC_d71ef.exe" /INCREMENTAL /ILK:"cmTC_d71ef.dir\\Debug\\cmTC_d71ef.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-n0t333/Debug/cmTC_d71ef.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-n0t333/Debug/cmTC_d71ef.lib" /MACHINE:X64  /machine:x64 cmTC_d71ef.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_d71ef.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n0t333\\Debug\\cmTC_d71ef.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_d71ef.dir\\Debug\\cmTC_d71ef.tlog\\unsuccessfulbuild".
+          Touching "cmTC_d71ef.dir\\Debug\\cmTC_d71ef.tlog\\cmTC_d71ef.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n0t333\\cmTC_d71ef.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.37
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/OpusFunctions.cmake:56 (check_include_file)"
+      - "cmake/OpusConfig.cmake:57 (opus_detect_sse)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for xmmintrin.h"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-c3c8hs"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-c3c8hs"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_XMMINTRIN_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-c3c8hs'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_74202.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:26 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c3c8hs\\cmTC_74202.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_74202.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c3c8hs\\Debug\\".
+          Creating directory "cmTC_74202.dir\\Debug\\cmTC_74202.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_74202.dir\\Debug\\cmTC_74202.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_74202.dir\\Debug\\cmTC_74202.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_74202.dir\\Debug\\\\" /Fd"cmTC_74202.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c3c8hs\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c3c8hs\\Debug\\cmTC_74202.exe" /INCREMENTAL /ILK:"cmTC_74202.dir\\Debug\\cmTC_74202.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-c3c8hs/Debug/cmTC_74202.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-c3c8hs/Debug/cmTC_74202.lib" /MACHINE:X64  /machine:x64 cmTC_74202.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_74202.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c3c8hs\\Debug\\cmTC_74202.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_74202.dir\\Debug\\cmTC_74202.tlog\\unsuccessfulbuild".
+          Touching "cmTC_74202.dir\\Debug\\cmTC_74202.tlog\\cmTC_74202.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c3c8hs\\cmTC_74202.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/OpusFunctions.cmake:76 (check_include_file)"
+      - "cmake/OpusConfig.cmake:57 (opus_detect_sse)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for emmintrin.h"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-p0wpvu"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-p0wpvu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_EMMINTRIN_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-p0wpvu'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f03a0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:27 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p0wpvu\\cmTC_f03a0.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_f03a0.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p0wpvu\\Debug\\".
+          Creating directory "cmTC_f03a0.dir\\Debug\\cmTC_f03a0.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_f03a0.dir\\Debug\\cmTC_f03a0.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_f03a0.dir\\Debug\\cmTC_f03a0.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f03a0.dir\\Debug\\\\" /Fd"cmTC_f03a0.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p0wpvu\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p0wpvu\\Debug\\cmTC_f03a0.exe" /INCREMENTAL /ILK:"cmTC_f03a0.dir\\Debug\\cmTC_f03a0.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-p0wpvu/Debug/cmTC_f03a0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-p0wpvu/Debug/cmTC_f03a0.lib" /MACHINE:X64  /machine:x64 cmTC_f03a0.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_f03a0.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p0wpvu\\Debug\\cmTC_f03a0.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_f03a0.dir\\Debug\\cmTC_f03a0.tlog\\unsuccessfulbuild".
+          Touching "cmTC_f03a0.dir\\Debug\\cmTC_f03a0.tlog\\cmTC_f03a0.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-p0wpvu\\cmTC_f03a0.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.34
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/OpusFunctions.cmake:95 (check_include_file)"
+      - "cmake/OpusConfig.cmake:57 (opus_detect_sse)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for smmintrin.h"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-wcf06q"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-wcf06q"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_SMMINTRIN_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-wcf06q'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_98ee5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:27 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wcf06q\\cmTC_98ee5.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_98ee5.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wcf06q\\Debug\\".
+          Creating directory "cmTC_98ee5.dir\\Debug\\cmTC_98ee5.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_98ee5.dir\\Debug\\cmTC_98ee5.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_98ee5.dir\\Debug\\cmTC_98ee5.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_98ee5.dir\\Debug\\\\" /Fd"cmTC_98ee5.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wcf06q\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wcf06q\\Debug\\cmTC_98ee5.exe" /INCREMENTAL /ILK:"cmTC_98ee5.dir\\Debug\\cmTC_98ee5.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-wcf06q/Debug/cmTC_98ee5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-wcf06q/Debug/cmTC_98ee5.lib" /MACHINE:X64  /machine:x64 cmTC_98ee5.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_98ee5.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wcf06q\\Debug\\cmTC_98ee5.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_98ee5.dir\\Debug\\cmTC_98ee5.tlog\\unsuccessfulbuild".
+          Touching "cmTC_98ee5.dir\\Debug\\cmTC_98ee5.tlog\\cmTC_98ee5.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wcf06q\\cmTC_98ee5.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.34
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/OpusFunctions.cmake:114 (check_include_file)"
+      - "cmake/OpusConfig.cmake:57 (opus_detect_sse)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Looking for immintrin.h"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-l6ji9y"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-l6ji9y"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "HAVE_IMMINTRIN_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-l6ji9y'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_71178.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:28 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l6ji9y\\cmTC_71178.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_71178.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l6ji9y\\Debug\\".
+          Creating directory "cmTC_71178.dir\\Debug\\cmTC_71178.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_71178.dir\\Debug\\cmTC_71178.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_71178.dir\\Debug\\cmTC_71178.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_71178.dir\\Debug\\\\" /Fd"cmTC_71178.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l6ji9y\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l6ji9y\\Debug\\cmTC_71178.exe" /INCREMENTAL /ILK:"cmTC_71178.dir\\Debug\\cmTC_71178.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-l6ji9y/Debug/cmTC_71178.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-l6ji9y/Debug/cmTC_71178.lib" /MACHINE:X64  /machine:x64 cmTC_71178.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_71178.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l6ji9y\\Debug\\cmTC_71178.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_71178.dir\\Debug\\cmTC_71178.tlog\\unsuccessfulbuild".
+          Touching "cmTC_71178.dir\\Debug\\cmTC_71178.tlog\\cmTC_71178.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l6ji9y\\cmTC_71178.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.34
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "cmake/OpusFunctions.cmake:46 (check_c_compiler_flag)"
+      - "cmake/OpusFunctions.cmake:117 (check_flag)"
+      - "cmake/OpusConfig.cmake:57 (opus_detect_sse)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Performing Test AVX_SUPPORTED"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-fefvvj"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-fefvvj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "AVX_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-fefvvj'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_dea24.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:28 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fefvvj\\cmTC_dea24.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_dea24.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fefvvj\\Debug\\".
+          Creating directory "cmTC_dea24.dir\\Debug\\cmTC_dea24.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_dea24.dir\\Debug\\cmTC_dea24.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_dea24.dir\\Debug\\cmTC_dea24.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D AVX_SUPPORTED /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /arch:AVX /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dea24.dir\\Debug\\\\" /Fd"cmTC_dea24.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fefvvj\\src.c"
+          src.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fefvvj\\Debug\\cmTC_dea24.exe" /INCREMENTAL /ILK:"cmTC_dea24.dir\\Debug\\cmTC_dea24.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-fefvvj/Debug/cmTC_dea24.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-fefvvj/Debug/cmTC_dea24.lib" /MACHINE:X64  /machine:x64 cmTC_dea24.dir\\Debug\\src.obj
+          cmTC_dea24.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fefvvj\\Debug\\cmTC_dea24.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_dea24.dir\\Debug\\cmTC_dea24.tlog\\unsuccessfulbuild".
+          Touching "cmTC_dea24.dir\\Debug\\cmTC_dea24.tlog\\cmTC_dea24.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fefvvj\\cmTC_dea24.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "cmake/OpusFunctions.cmake:46 (check_c_compiler_flag)"
+      - "cmake/OpusConfig.cmake:73 (check_flag)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Performing Test FAST_MATH_SUPPORTED"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-o9jtni"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-o9jtni"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "FAST_MATH_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-o9jtni'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_eccdc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:29 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o9jtni\\cmTC_eccdc.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_eccdc.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o9jtni\\Debug\\".
+          Creating directory "cmTC_eccdc.dir\\Debug\\cmTC_eccdc.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_eccdc.dir\\Debug\\cmTC_eccdc.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_eccdc.dir\\Debug\\cmTC_eccdc.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D FAST_MATH_SUPPORTED /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:fast /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_eccdc.dir\\Debug\\\\" /Fd"cmTC_eccdc.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o9jtni\\src.c"
+          src.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o9jtni\\Debug\\cmTC_eccdc.exe" /INCREMENTAL /ILK:"cmTC_eccdc.dir\\Debug\\cmTC_eccdc.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-o9jtni/Debug/cmTC_eccdc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-o9jtni/Debug/cmTC_eccdc.lib" /MACHINE:X64  /machine:x64 cmTC_eccdc.dir\\Debug\\src.obj
+          cmTC_eccdc.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o9jtni\\Debug\\cmTC_eccdc.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_eccdc.dir\\Debug\\cmTC_eccdc.tlog\\unsuccessfulbuild".
+          Touching "cmTC_eccdc.dir\\Debug\\cmTC_eccdc.tlog\\cmTC_eccdc.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o9jtni\\cmTC_eccdc.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "cmake/OpusFunctions.cmake:46 (check_c_compiler_flag)"
+      - "cmake/OpusConfig.cmake:74 (check_flag)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Performing Test STACK_PROTECTOR_SUPPORTED"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-3fqal7"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-3fqal7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "STACK_PROTECTOR_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-3fqal7'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_826b1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:29 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3fqal7\\cmTC_826b1.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_826b1.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3fqal7\\Debug\\".
+          Creating directory "cmTC_826b1.dir\\Debug\\cmTC_826b1.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_826b1.dir\\Debug\\cmTC_826b1.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_826b1.dir\\Debug\\cmTC_826b1.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D STACK_PROTECTOR_SUPPORTED /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_826b1.dir\\Debug\\\\" /Fd"cmTC_826b1.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3fqal7\\src.c"
+          src.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3fqal7\\Debug\\cmTC_826b1.exe" /INCREMENTAL /ILK:"cmTC_826b1.dir\\Debug\\cmTC_826b1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-3fqal7/Debug/cmTC_826b1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-3fqal7/Debug/cmTC_826b1.lib" /MACHINE:X64  /machine:x64 cmTC_826b1.dir\\Debug\\src.obj
+          cmTC_826b1.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3fqal7\\Debug\\cmTC_826b1.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_826b1.dir\\Debug\\cmTC_826b1.tlog\\unsuccessfulbuild".
+          Touching "cmTC_826b1.dir\\Debug\\cmTC_826b1.tlog\\cmTC_826b1.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3fqal7\\cmTC_826b1.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "cmake/OpusFunctions.cmake:46 (check_c_compiler_flag)"
+      - "cmake/OpusConfig.cmake:75 (check_flag)"
+      - "CMakeLists.txt:11 (include)"
+    checks:
+      - "Performing Test STACK_PROTECTOR_DISABLED_SUPPORTED"
+    directories:
+      source: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-1bz2vt"
+      binary: "C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-1bz2vt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro -W0"
+      CMAKE_MODULE_PATH: "C:/Users/akale/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/audiopus_sys-0.2.2/opus/cmake"
+    buildResult:
+      variable: "STACK_PROTECTOR_DISABLED_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-1bz2vt'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9ad5c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 2/5/2026 6:36:30 PM.
+        
+        Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1bz2vt\\cmTC_9ad5c.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_9ad5c.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1bz2vt\\Debug\\".
+          Creating directory "cmTC_9ad5c.dir\\Debug\\cmTC_9ad5c.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_9ad5c.dir\\Debug\\cmTC_9ad5c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_9ad5c.dir\\Debug\\cmTC_9ad5c.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W0 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D STACK_PROTECTOR_DISABLED_SUPPORTED /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS- /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9ad5c.dir\\Debug\\\\" /Fd"cmTC_9ad5c.dir\\Debug\\vc143.pdb" /external:W0 /Gd /TC /errorReport:queue  -Brepro "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1bz2vt\\src.c"
+          src.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1bz2vt\\Debug\\cmTC_9ad5c.exe" /INCREMENTAL /ILK:"cmTC_9ad5c.dir\\Debug\\cmTC_9ad5c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-1bz2vt/Debug/cmTC_9ad5c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/akale/Desktop/Worl/Audio-Sender-SecondPC/target/debug/build/audiopus_sys-5f61458d584fb77c/out/build/CMakeFiles/CMakeScratch/TryCompile-1bz2vt/Debug/cmTC_9ad5c.lib" /MACHINE:X64  /machine:x64 cmTC_9ad5c.dir\\Debug\\src.obj
+          cmTC_9ad5c.vcxproj -> C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1bz2vt\\Debug\\cmTC_9ad5c.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_9ad5c.dir\\Debug\\cmTC_9ad5c.tlog\\unsuccessfulbuild".
+          Touching "cmTC_9ad5c.dir\\Debug\\cmTC_9ad5c.tlog\\cmTC_9ad5c.lastbuildstate".
+        Done Building Project "C:\\Users\\akale\\Desktop\\Worl\\Audio-Sender-SecondPC\\target\\debug\\build\\audiopus_sys-5f61458d584fb77c\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1bz2vt\\cmTC_9ad5c.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.32
+        
+      exitCode: 0
+...
