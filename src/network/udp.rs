@@ -53,25 +53,36 @@ fn configure_socket(socket: &Socket, config: &NetworkConfig) -> Result<(), Netwo
             .map_err(|e| NetworkError::BindFailed(format!("Failed to set SO_REUSEADDR: {}", e)))?;
     }
     
-    // Set send buffer size
+    // Set send buffer size - larger buffers prevent packet loss under load
     socket.set_send_buffer_size(config.send_buffer_size)
         .map_err(|e| NetworkError::BindFailed(format!("Failed to set send buffer: {}", e)))?;
     
-    // Set receive buffer size
+    // Set receive buffer size - larger buffers handle burst traffic better
     socket.set_recv_buffer_size(config.recv_buffer_size)
         .map_err(|e| NetworkError::BindFailed(format!("Failed to set recv buffer: {}", e)))?;
     
-    // Disable Nagle's algorithm (though UDP doesn't have it, this is for consistency)
-    // Set broadcast (useful for local network discovery)
+    // Enable broadcast (useful for local network discovery and fallback)
     socket.set_broadcast(true)
         .map_err(|e| NetworkError::BindFailed(format!("Failed to set broadcast: {}", e)))?;
     
-    #[cfg(target_os = "windows")]
+    // Platform-specific optimizations
+    #[cfg(target_os = "linux")]
     {
-        // Windows-specific: Set exclusive address use to prevent port hijacking
-        // This is the opposite of SO_REUSEADDR behavior on Windows
-        // socket.set_exclusive_address_use(true)?;
+        configure_linux_socket(socket)?;
     }
+    
+    Ok(())
+}
+
+#[cfg(target_os = "linux")]
+fn configure_linux_socket(_socket: &Socket) -> Result<(), NetworkError> {
+    // Note: On Linux, setting IP_TOS and SO_BUSY_POLL would require libc
+    // These optimizations are available but require adding libc dependency
+    // For now, the socket2 configuration handles the most important settings
+    
+    // If libc is added to Cargo.toml, the following could be enabled:
+    // - IP_TOS for DSCP marking (QoS)
+    // - SO_BUSY_POLL for reduced latency polling
     
     Ok(())
 }

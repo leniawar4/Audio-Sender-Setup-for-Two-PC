@@ -1,6 +1,6 @@
 //! Individual track representation
 
-use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU64, AtomicU32, Ordering};
 use std::sync::Arc;
 use std::time::Instant;
 
@@ -60,14 +60,20 @@ pub struct Track {
     /// Packets lost
     packets_lost: Arc<AtomicU64>,
     
+    /// Current latency in microseconds (stored as AtomicU32 for thread safety)
+    latency_us: Arc<AtomicU32>,
+    
+    /// Current jitter estimate in microseconds (stored as AtomicU32 for thread safety)
+    jitter_us: Arc<AtomicU32>,
+    
     /// Start time
     start_time: Option<Instant>,
     
     /// Last error message
     last_error: Option<String>,
     
-    /// Peak level (dB)
-    peak_level_db: f32,
+    /// Peak level (dB) - stored as AtomicU32 in millibels for thread safety
+    peak_level_millibels: Arc<AtomicU32>,
 }
 
 // Track is now Send + Sync safe (no raw pointers)
@@ -88,9 +94,11 @@ impl Track {
             buffer: create_shared_buffer(RING_BUFFER_CAPACITY),
             packets_count: Arc::new(AtomicU64::new(0)),
             packets_lost: Arc::new(AtomicU64::new(0)),
+            latency_us: Arc::new(AtomicU32::new(0)),
+            jitter_us: Arc::new(AtomicU32::new(0)),
             start_time: None,
             last_error: None,
-            peak_level_db: -96.0,
+            peak_level_millibels: Arc::new(AtomicU32::new(0)), // 0 represents -96.0 dB
         }
     }
     
@@ -210,13 +218,71 @@ impl Track {
             -96.0
         };
         
+        // Get current level
+        let current_millibels = self.peak_level_millibels.load(Ordering::Relaxed);
+        let current_db = (current_millibels as f32 / 100.0) - 96.0;
+        
         // Smooth the level (simple IIR filter)
-        self.peak_level_db = self.peak_level_db * 0.9 + db * 0.1;
+        let new_db = current_db * 0.9 + db * 0.1;
+        
+        // Store as millibels (add 96 to make positive, multiply by 100 for precision)
+        let new_millibels = ((new_db + 96.0) * 100.0) as u32;
+        self.peak_level_millibels.store(new_millibels, Ordering::Relaxed);
+    }
+    
+    /// Thread-safe update of peak level
+    pub fn update_level_atomic(&self, samples: &[f32]) {
+        if samples.is_empty() {
+            return;
+        }
+        
+        let peak = samples.iter()
+            .map(|s| s.abs())
+            .fold(0.0f32, f32::max);
+        
+        // Convert to dB
+        let db = if peak > 0.0 {
+            20.0 * peak.log10()
+        } else {
+            -96.0
+        };
+        
+        // Get current level
+        let current_millibels = self.peak_level_millibels.load(Ordering::Relaxed);
+        let current_db = (current_millibels as f32 / 100.0) - 96.0;
+        
+        // Smooth the level (simple IIR filter)
+        let new_db = current_db * 0.9 + db * 0.1;
+        
+        // Store as millibels (add 96 to make positive, multiply by 100 for precision)
+        let new_millibels = ((new_db + 96.0) * 100.0) as u32;
+        self.peak_level_millibels.store(new_millibels, Ordering::Relaxed);
     }
     
     /// Get current level in dB
     pub fn level_db(&self) -> f32 {
-        self.peak_level_db
+        let millibels = self.peak_level_millibels.load(Ordering::Relaxed);
+        (millibels as f32 / 100.0) - 96.0
+    }
+    
+    /// Update latency measurement (in microseconds)
+    pub fn update_latency(&self, latency_us: u32) {
+        self.latency_us.store(latency_us, Ordering::Relaxed);
+    }
+    
+    /// Get current latency in milliseconds
+    pub fn latency_ms(&self) -> f32 {
+        self.latency_us.load(Ordering::Relaxed) as f32 / 1000.0
+    }
+    
+    /// Update jitter measurement (in microseconds)
+    pub fn update_jitter(&self, jitter_us: u32) {
+        self.jitter_us.store(jitter_us, Ordering::Relaxed);
+    }
+    
+    /// Get current jitter in milliseconds
+    pub fn jitter_ms(&self) -> f32 {
+        self.jitter_us.load(Ordering::Relaxed) as f32 / 1000.0
     }
     
     /// Set error state
@@ -274,9 +340,9 @@ impl Track {
             packets_sent: self.packets_count(),
             packets_received: self.packets_count(),
             packets_lost: self.packets_lost(),
-            current_latency_ms: 0.0, // TODO: Calculate actual latency
-            jitter_ms: 0.0, // TODO: Calculate jitter
-            level_db: self.peak_level_db,
+            current_latency_ms: self.latency_ms(),
+            jitter_ms: self.jitter_ms(),
+            level_db: self.level_db(),
         }
     }
 }

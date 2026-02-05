@@ -19,7 +19,10 @@ use lan_audio_streamer::{
     codec::OpusEncoder,
     config::{AppConfig, OpusConfig},
     constants::*,
-    network::sender::MultiTrackSender,
+    network::{
+        sender::MultiTrackSender,
+        discovery::{DiscoveryService, get_best_local_address, get_local_addresses},
+    },
     protocol::{TrackConfig, TrackType},
     tracks::{TrackManager, TrackEvent},
     ui::WebServer,
@@ -83,12 +86,58 @@ async fn main() -> Result<()> {
     
     tracing::info!("Web UI available at http://{}:{}", config.ui.bind_address, config.ui.http_port);
     
-    // Get target address from args or use default
-    let target_addr: SocketAddr = std::env::args()
-        .nth(1)
-        .unwrap_or_else(|| "127.0.0.1:5000".to_string())
-        .parse()
-        .expect("Invalid target address");
+    // Display local network addresses for user reference
+    println!("\n=== Local Network Addresses ===");
+    for addr in get_local_addresses() {
+        println!("  {}", addr);
+    }
+    if let Some(best) = get_best_local_address() {
+        println!("  Best for LAN: {}", best);
+    }
+    println!();
+    
+    // Get target address - automatic discovery or manual
+    let target_addr: SocketAddr = if let Some(arg) = std::env::args().nth(1) {
+        // Manual address provided
+        arg.parse().expect("Invalid target address format. Use: IP:PORT")
+    } else {
+        // Automatic discovery
+        tracing::info!("No target specified, starting automatic receiver discovery...");
+        println!("Searching for receivers on the network...");
+        
+        let mut discovery = DiscoveryService::new(true, config.network.udp_port, "Audio Sender".to_string());
+        if let Err(e) = discovery.start() {
+            tracing::warn!("Failed to start discovery service: {}", e);
+        }
+        
+        // Wait for a receiver with timeout
+        let receiver = discovery.wait_for_peer(false, Duration::from_secs(30));
+        
+        if let Some(peer) = receiver {
+            let addr = peer.audio_address();
+            tracing::info!("Discovered receiver: {} ({})", peer.name, addr);
+            println!("Found receiver: {} at {}", peer.name, addr);
+            discovery.stop();
+            addr
+        } else {
+            // Fallback: broadcast to default port
+            let best_local = get_best_local_address()
+                .map(|ip| match ip {
+                    std::net::IpAddr::V4(v4) => {
+                        let octets = v4.octets();
+                        std::net::IpAddr::V4(std::net::Ipv4Addr::new(octets[0], octets[1], octets[2], 255))
+                    }
+                    ip => ip,
+                })
+                .unwrap_or_else(|| std::net::IpAddr::V4(std::net::Ipv4Addr::BROADCAST));
+            
+            let addr = SocketAddr::new(best_local, DEFAULT_UDP_PORT);
+            tracing::warn!("No receiver found, broadcasting to {}", addr);
+            println!("No receiver found. Broadcasting to {}", addr);
+            discovery.stop();
+            addr
+        }
+    };
     
     tracing::info!("Target receiver: {}", target_addr);
     
@@ -208,35 +257,56 @@ async fn main() -> Result<()> {
     
     // Main encoding/sending loop
     loop {
-        // Process all tracks
-        {
+        // Process all tracks with minimal blocking
+        let has_work = {
             let mut states = track_states.lock();
+            let mut work_done = false;
+            
             for (track_id, state) in states.iter_mut() {
                 let frame_size = state.encoder.samples_per_frame();
                 
-                // Check for captured audio
+                // Drain all available captured audio
                 while let Some(frame) = state.capture_buffer.try_pop() {
+                    work_done = true;
+                    
                     // Accumulate samples
                     state.sample_buffer.extend_from_slice(&frame.samples);
                     
-                    // Process complete frames
+                    // Update audio level for the track
+                    if let Some(track) = track_manager.get_track(*track_id) {
+                        track.update_level_atomic(&frame.samples);
+                    }
+                    
+                    // Process complete frames immediately
                     while state.sample_buffer.len() >= frame_size {
                         let samples: Vec<f32> = state.sample_buffer.drain(..frame_size).collect();
                         
                         // Encode
                         match state.encoder.encode(&samples) {
                             Ok(encoded) => {
-                                // Calculate timestamp
+                                // Calculate timestamp from start
                                 let timestamp = start_time.elapsed().as_micros() as u64;
                                 
-                                // Send over network
+                                // Send over network immediately
                                 if let Err(e) = network_sender.send_audio(
                                     *track_id,
                                     encoded,
                                     timestamp,
                                     DEFAULT_CHANNELS == 2,
                                 ) {
-                                    tracing::warn!("Failed to send packet for track {}: {}", track_id, e);
+                                    // Only log occasionally to prevent spam
+                                    if state.sequence % 1000 == 0 {
+                                        tracing::warn!("Failed to send packet for track {}: {}", track_id, e);
+                                    }
+                                } else {
+                                    // Update packet count on successful send
+                                    if let Some(track) = track_manager.get_track(*track_id) {
+                                        track.increment_packets();
+                                        
+                                        // Calculate latency estimate from encode time
+                                        let encode_time_us = (state.encoder.frame_duration_ms() * 1000.0) as u32;
+                                        track.update_latency(encode_time_us);
+                                    }
                                 }
                                 
                                 state.sequence = state.sequence.wrapping_add(1);
@@ -248,10 +318,17 @@ async fn main() -> Result<()> {
                     }
                 }
             }
-        }
+            work_done
+        };
         
-        // Small sleep to prevent busy-waiting
-        tokio::time::sleep(Duration::from_micros(500)).await;
+        // Adaptive sleep: shorter when active, longer when idle
+        if has_work {
+            // Yield briefly to allow other tasks, but stay responsive
+            tokio::task::yield_now().await;
+        } else {
+            // No work - wait with timeout for efficiency
+            tokio::time::sleep(Duration::from_micros(250)).await;
+        }
         
         // Periodic stats logging
         if last_stats_time.elapsed() >= Duration::from_secs(5) {

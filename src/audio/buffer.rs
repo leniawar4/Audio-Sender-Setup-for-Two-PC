@@ -137,7 +137,7 @@ pub fn create_shared_buffer(capacity: usize) -> SharedRingBuffer {
     Arc::new(RingBuffer::new(capacity))
 }
 
-/// Jitter buffer for packet reordering
+/// Jitter buffer for packet reordering and loss concealment
 pub struct JitterBuffer {
     /// Buffer slots indexed by sequence modulo capacity
     slots: Vec<Option<AudioFrame>>,
@@ -149,14 +149,26 @@ pub struct JitterBuffer {
     next_sequence: u32,
     /// Minimum buffer delay in frames
     min_delay: usize,
+    /// Maximum buffer delay (adaptive ceiling)
+    max_delay: usize,
+    /// Current target delay (adaptive)
+    target_delay: usize,
     /// Current buffer level
     level: AtomicUsize,
     /// Packets received
     received: AtomicUsize,
     /// Packets lost
     lost: AtomicUsize,
-    /// Late packets
+    /// Late packets (arrived after playback point)
     late: AtomicUsize,
+    /// Out of order packets
+    out_of_order: AtomicUsize,
+    /// Last receive timestamp for jitter calculation
+    last_receive_time: Option<std::time::Instant>,
+    /// Jitter estimator (exponential moving average)
+    jitter_estimate_us: f64,
+    /// Has been initialized with first packet
+    initialized: bool,
 }
 
 impl JitterBuffer {
@@ -174,27 +186,63 @@ impl JitterBuffer {
             mask: capacity - 1,
             next_sequence: 0,
             min_delay,
+            max_delay: capacity / 2, // Max half the buffer
+            target_delay: min_delay,
             level: AtomicUsize::new(0),
             received: AtomicUsize::new(0),
             lost: AtomicUsize::new(0),
             late: AtomicUsize::new(0),
+            out_of_order: AtomicUsize::new(0),
+            last_receive_time: None,
+            jitter_estimate_us: 0.0,
+            initialized: false,
         }
     }
     
-    /// Insert a frame into the jitter buffer
+    /// Insert a frame into the jitter buffer with adaptive delay
     pub fn insert(&mut self, frame: AudioFrame) -> bool {
         let seq = frame.sequence;
+        let now = std::time::Instant::now();
         
-        // Check if packet is too late
-        if seq < self.next_sequence {
-            let diff = self.next_sequence - seq;
-            if diff > self.capacity as u32 / 2 {
-                // Sequence wrapped around, this is actually a future packet
+        // Update jitter estimate
+        if let Some(last_time) = self.last_receive_time {
+            let inter_arrival_us = now.duration_since(last_time).as_micros() as f64;
+            // Expected inter-arrival based on frame timing (e.g., 10ms = 10000us)
+            let expected_us = 10000.0; // TODO: Could be calculated from frame size
+            let deviation = (inter_arrival_us - expected_us).abs();
+            
+            // Exponential moving average with alpha = 0.1
+            self.jitter_estimate_us = self.jitter_estimate_us * 0.9 + deviation * 0.1;
+            
+            // Adapt target delay based on jitter
+            self.adapt_delay();
+        }
+        self.last_receive_time = Some(now);
+        
+        // Initialize sequence on first packet
+        if !self.initialized {
+            self.next_sequence = seq;
+            self.initialized = true;
+        }
+        
+        // Check if packet is too late (already past playback point)
+        let seq_diff = seq.wrapping_sub(self.next_sequence) as i32;
+        
+        if seq_diff < 0 {
+            // Packet is behind playback point
+            let behind = (-seq_diff) as u32;
+            if behind > self.capacity as u32 / 2 {
+                // Large negative = sequence wrapped, this is actually future
             } else {
-                // Packet is late
+                // Packet is genuinely late
                 self.late.fetch_add(1, Ordering::Relaxed);
                 return false;
             }
+        }
+        
+        // Check for out-of-order (but not late)
+        if seq_diff > 1 && seq_diff < self.capacity as i32 / 2 {
+            self.out_of_order.fetch_add(1, Ordering::Relaxed);
         }
         
         let index = (seq as usize) & self.mask;
@@ -205,10 +253,26 @@ impl JitterBuffer {
         true
     }
     
+    /// Adapt delay based on network jitter
+    fn adapt_delay(&mut self) {
+        // Convert jitter estimate to frames (assuming 10ms frames)
+        let jitter_frames = (self.jitter_estimate_us / 10000.0).ceil() as usize;
+        
+        // Target delay = min_delay + jitter margin
+        let new_target = (self.min_delay + jitter_frames).clamp(self.min_delay, self.max_delay);
+        
+        // Smooth adaptation (don't change too rapidly)
+        if new_target > self.target_delay {
+            self.target_delay = self.target_delay.saturating_add(1).min(new_target);
+        } else if new_target < self.target_delay && self.level.load(Ordering::Relaxed) > new_target {
+            self.target_delay = self.target_delay.saturating_sub(1).max(new_target);
+        }
+    }
+    
     /// Get the next frame if available and buffered enough
     pub fn get_next(&mut self) -> Option<AudioFrame> {
-        // Check if we have minimum delay buffered
-        if self.level.load(Ordering::Relaxed) < self.min_delay {
+        // Use adaptive target delay
+        if self.level.load(Ordering::Relaxed) < self.target_delay {
             return None;
         }
         
@@ -250,12 +314,27 @@ impl JitterBuffer {
         }
         self.next_sequence = 0;
         self.level.store(0, Ordering::Relaxed);
+        self.target_delay = self.min_delay;
+        self.jitter_estimate_us = 0.0;
+        self.last_receive_time = None;
+        self.initialized = false;
     }
     
     /// Set the next expected sequence (for sync)
     pub fn set_next_sequence(&mut self, seq: u32) {
         self.reset();
         self.next_sequence = seq;
+        self.initialized = true;
+    }
+    
+    /// Get current target delay
+    pub fn target_delay(&self) -> usize {
+        self.target_delay
+    }
+    
+    /// Get jitter estimate in microseconds
+    pub fn jitter_estimate_us(&self) -> f64 {
+        self.jitter_estimate_us
     }
     
     /// Get statistics
@@ -263,9 +342,12 @@ impl JitterBuffer {
         JitterBufferStats {
             level: self.level.load(Ordering::Relaxed),
             capacity: self.capacity,
+            target_delay: self.target_delay,
             received: self.received.load(Ordering::Relaxed),
             lost: self.lost.load(Ordering::Relaxed),
             late: self.late.load(Ordering::Relaxed),
+            out_of_order: self.out_of_order.load(Ordering::Relaxed),
+            jitter_us: self.jitter_estimate_us,
         }
     }
 }
@@ -275,9 +357,12 @@ impl JitterBuffer {
 pub struct JitterBufferStats {
     pub level: usize,
     pub capacity: usize,
+    pub target_delay: usize,
     pub received: usize,
     pub lost: usize,
     pub late: usize,
+    pub out_of_order: usize,
+    pub jitter_us: f64,
 }
 
 impl JitterBufferStats {
@@ -286,6 +371,14 @@ impl JitterBufferStats {
             0.0
         } else {
             self.lost as f32 / (self.received + self.lost) as f32
+        }
+    }
+    
+    pub fn late_rate(&self) -> f32 {
+        if self.received == 0 {
+            0.0
+        } else {
+            self.late as f32 / self.received as f32
         }
     }
 }

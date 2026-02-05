@@ -19,7 +19,10 @@ use lan_audio_streamer::{
     codec::OpusDecoder,
     config::AppConfig,
     constants::*,
-    network::receiver::{AudioReceiver, ReceivedPacket},
+    network::{
+        receiver::{AudioReceiver, ReceivedPacket},
+        discovery::{DiscoveryService, get_best_local_address, get_local_addresses},
+    },
     protocol::TrackConfig,
     tracks::{TrackManager, TrackEvent},
     ui::WebServer,
@@ -80,6 +83,30 @@ async fn main() -> Result<()> {
     let _web_handle = web_server.start_background();
     
     tracing::info!("Web UI available at http://{}:{}", config.ui.bind_address, config.ui.http_port);
+    
+    // Display local network addresses for user reference
+    println!("\n=== Local Network Addresses ===");
+    for addr in get_local_addresses() {
+        println!("  {}", addr);
+    }
+    if let Some(best) = get_best_local_address() {
+        println!("  Best for LAN: {} (listening on port {})", best, config.network.udp_port);
+    }
+    println!();
+    
+    // Start discovery service to announce our presence
+    let mut discovery = DiscoveryService::new(false, config.network.udp_port, "Audio Receiver".to_string());
+    discovery.on_peer_discovered(|peer| {
+        if peer.is_sender {
+            tracing::info!("Discovered sender: {} at {}", peer.name, peer.audio_address());
+            println!("Discovered sender: {} at {}", peer.name, peer.audio_address());
+        }
+    });
+    if let Err(e) = discovery.start() {
+        tracing::warn!("Failed to start discovery service: {}", e);
+    } else {
+        tracing::info!("Discovery service started - announcing receiver presence");
+    }
     
     // Create packet receiver channel
     let (packet_tx, packet_rx) = bounded::<ReceivedPacket>(4096);
@@ -203,137 +230,187 @@ async fn main() -> Result<()> {
     let mut last_stats_time = std::time::Instant::now();
     
     loop {
-        // Process received packets
-        while let Ok(packet) = packet_rx.try_recv() {
-            let track_id = packet.track_id;
-            
-            // Skip packets for deleted tracks
-            if deleted_tracks.lock().contains(&track_id) {
-                continue;
-            }
-            
-            let mut states = track_states.lock();
-            
-            // Initialize track state if new
-            if !states.contains_key(&track_id) {
-                tracing::info!("New track {} detected, initializing...", track_id);
-                
-                // Determine channel count from packet
-                let channels = if packet.is_stereo { 2 } else { 1 };
-                
-                // Check if track already exists in manager (user may have pre-configured it)
-                let output_device = if let Some(track) = track_manager.get_track(track_id) {
-                    if !track.device_id.is_empty() {
-                        track.device_id.clone()
-                    } else {
-                        default_output.clone()
-                    }
-                } else {
-                    default_output.clone()
-                };
-                
-                // Create decoder
-                let frame_size = (DEFAULT_SAMPLE_RATE as f32 * DEFAULT_FRAME_SIZE_MS / 1000.0) as usize;
-                let decoder = match OpusDecoder::new(DEFAULT_SAMPLE_RATE, channels, frame_size) {
-                    Ok(d) => d,
-                    Err(e) => {
-                        tracing::error!("Failed to create decoder for track {}: {}", track_id, e);
+        // Process received packets - drain the channel efficiently
+        let mut processed_count = 0;
+        const MAX_BATCH_SIZE: usize = 64; // Process in batches for better efficiency
+        
+        while processed_count < MAX_BATCH_SIZE {
+            match packet_rx.try_recv() {
+                Ok(packet) => {
+                    processed_count += 1;
+                    let track_id = packet.track_id;
+                    
+                    // Skip packets for deleted tracks
+                    if deleted_tracks.lock().contains(&track_id) {
                         continue;
                     }
-                };
-                
-                // Create jitter buffer (32 slots, 2 frame minimum delay)
-                let jitter_buffer = JitterBuffer::new(32, 2);
-                
-                // Create playback (optional - may not have output device)
-                let playback = if !output_device.is_empty() {
-                    match NetworkPlayback::new(
-                        track_id,
-                        &output_device,
-                        Some(DEFAULT_SAMPLE_RATE),
-                        Some(channels),
-                        32, // jitter buffer size
-                        2,  // min delay
-                    ) {
-                        Ok(mut p) => {
-                            if let Err(e) = p.start() {
-                                tracing::warn!("Failed to start playback for track {}: {}", track_id, e);
-                                None
+                    
+                    let mut states = track_states.lock();
+                    
+                    // Initialize track state if new
+                    if !states.contains_key(&track_id) {
+                        tracing::info!("New track {} detected, initializing...", track_id);
+                        
+                        // Determine channel count from packet
+                        let channels = if packet.is_stereo { 2 } else { 1 };
+                        
+                        // Check if track already exists in manager (user may have pre-configured it)
+                        let output_device = if let Some(track) = track_manager.get_track(track_id) {
+                            if !track.device_id.is_empty() {
+                                track.device_id.clone()
                             } else {
-                                tracing::info!("Started playback for track {} on {}", track_id, output_device);
-                                Some(p)
+                                default_output.clone()
                             }
-                        }
-                        Err(e) => {
-                            tracing::warn!("Failed to create playback for track {}: {}", track_id, e);
+                        } else {
+                            default_output.clone()
+                        };
+                        
+                        // Create decoder
+                        let frame_size = (DEFAULT_SAMPLE_RATE as f32 * DEFAULT_FRAME_SIZE_MS / 1000.0) as usize;
+                        let decoder = match OpusDecoder::new(DEFAULT_SAMPLE_RATE, channels, frame_size) {
+                            Ok(d) => d,
+                            Err(e) => {
+                                tracing::error!("Failed to create decoder for track {}: {}", track_id, e);
+                                continue;
+                            }
+                        };
+                        
+                        // Create jitter buffer (32 slots, 2 frame minimum delay)
+                        let jitter_buffer = JitterBuffer::new(32, 2);
+                        
+                        // Create playback (optional - may not have output device)
+                        let playback = if !output_device.is_empty() {
+                            match NetworkPlayback::new(
+                                track_id,
+                                &output_device,
+                                Some(DEFAULT_SAMPLE_RATE),
+                                Some(channels),
+                                32, // jitter buffer size
+                                2,  // min delay
+                            ) {
+                                Ok(mut p) => {
+                                    if let Err(e) = p.start() {
+                                        tracing::warn!("Failed to start playback for track {}: {}", track_id, e);
+                                        None
+                                    } else {
+                                        tracing::info!("Started playback for track {} on {}", track_id, output_device);
+                                        Some(p)
+                                    }
+                                }
+                                Err(e) => {
+                                    tracing::warn!("Failed to create playback for track {}: {}", track_id, e);
+                                    None
+                                }
+                            }
+                        } else {
                             None
+                        };
+                        
+                        // Create track in manager (only if it doesn't exist)
+                        if track_manager.get_track(track_id).is_none() {
+                            let track_config = TrackConfig {
+                                track_id: Some(track_id),
+                                name: format!("Track {}", track_id),
+                                device_id: output_device.clone(),
+                                bitrate: DEFAULT_BITRATE,
+                                frame_size_ms: DEFAULT_FRAME_SIZE_MS,
+                                channels,
+                                ..Default::default()
+                            };
+                            let _ = track_manager.create_track(track_config);
                         }
+                        
+                        states.insert(track_id, TrackState {
+                            decoder,
+                            jitter_buffer,
+                            playback,
+                            packets_received: 0,
+                            packets_lost: 0,
+                            device_id: output_device.clone(),
+                            channels,
+                        });
                     }
-                } else {
-                    None
-                };
-                
-                // Create track in manager (only if it doesn't exist)
-                if track_manager.get_track(track_id).is_none() {
-                    let track_config = TrackConfig {
-                        track_id: Some(track_id),
-                        name: format!("Track {}", track_id),
-                        device_id: output_device.clone(),
-                        bitrate: DEFAULT_BITRATE,
-                        frame_size_ms: DEFAULT_FRAME_SIZE_MS,
-                        channels,
-                        ..Default::default()
-                    };
-                    let _ = track_manager.create_track(track_config);
-                }
-                
-                states.insert(track_id, TrackState {
-                    decoder,
-                    jitter_buffer,
-                    playback,
-                    packets_received: 0,
-                    packets_lost: 0,
-                    device_id: output_device.clone(),
-                    channels,
-                });
-            }
-            
-            // Process packet
-            if let Some(state) = states.get_mut(&track_id) {
-                state.packets_received += 1;
-                
-                // Decode audio
-                match state.decoder.decode(&packet.payload) {
-                    Ok(samples) => {
-                        // Create audio frame
-                        let frame = AudioFrame::new(
-                            samples,
-                            state.decoder.channels(),
-                            packet.timestamp,
-                            packet.sequence,
-                        );
+                    
+                    // Process packet
+                    if let Some(state) = states.get_mut(&track_id) {
+                        state.packets_received += 1;
                         
-                        // Insert into jitter buffer for reordering
-                        state.jitter_buffer.insert(frame);
+                        // Update packet count in track manager
+                        if let Some(track) = track_manager.get_track(track_id) {
+                            track.increment_packets();
+                        }
                         
-                        // Process jitter buffer and push ready frames to playback
-                        // This handles packet reordering before sending to audio output
-                        while let Some(ready_frame) = state.jitter_buffer.get_next() {
-                            if let Some(ref playback) = state.playback {
-                                playback.push_frame_direct(ready_frame);
+                        // Decode audio
+                        match state.decoder.decode(&packet.payload) {
+                            Ok(samples) => {
+                                // Update audio level
+                                if let Some(track) = track_manager.get_track(track_id) {
+                                    track.update_level_atomic(&samples);
+                                }
+                                
+                                // Create audio frame
+                                let frame = AudioFrame::new(
+                                    samples,
+                                    state.decoder.channels(),
+                                    packet.timestamp,
+                                    packet.sequence,
+                                );
+                                
+                                // Insert into jitter buffer for reordering
+                                state.jitter_buffer.insert(frame);
+                                
+                                // Update jitter estimate from jitter buffer stats
+                                let jitter_stats = state.jitter_buffer.stats();
+                                if let Some(track) = track_manager.get_track(track_id) {
+                                    // Jitter estimate is stored in microseconds in the buffer
+                                    track.update_jitter(jitter_stats.jitter_us as u32);
+                                    
+                                    // Calculate latency based on jitter buffer delay
+                                    // target_delay * frame_duration gives us the buffer-induced latency
+                                    let buffer_latency_us = jitter_stats.target_delay as u32 * 10000; // ~10ms per frame
+                                    track.update_latency(buffer_latency_us);
+                                }
+                                
+                                // Process jitter buffer and push ready frames to playback
+                                // This handles packet reordering before sending to audio output
+                                while let Some(ready_frame) = state.jitter_buffer.get_next() {
+                                    if let Some(ref playback) = state.playback {
+                                        playback.push_frame_direct(ready_frame);
+                                    }
+                                }
+                            }
+                            Err(e) => {
+                                tracing::warn!("Decode error on track {}: {}", track_id, e);
+                                state.packets_lost += 1;
+                                
+                                // Update lost packet count
+                                if let Some(track) = track_manager.get_track(track_id) {
+                                    track.increment_lost();
+                                }
                             }
                         }
                     }
-                    Err(e) => {
-                        tracing::warn!("Decode error on track {}: {}", track_id, e);
-                        state.packets_lost += 1;
-                    }
+                }
+                Err(crossbeam_channel::TryRecvError::Empty) => break,
+                Err(crossbeam_channel::TryRecvError::Disconnected) => {
+                    tracing::error!("Packet channel disconnected");
+                    return Ok(());
                 }
             }
         }
         
+        // Adaptive sleep based on activity
+        if processed_count > 0 {
+            // Active streaming - minimal delay
+            tokio::task::yield_now().await;
+        } else {
+            // No packets - wait briefly
+            tokio::time::sleep(Duration::from_micros(250)).await;
+        }
+        
         // Periodic stats
         if last_stats_time.elapsed() >= Duration::from_secs(5) {
+            let _interval_duration = last_stats_time.elapsed();
             last_stats_time = std::time::Instant::now();
             
             let recv_stats = receiver.stats();
@@ -358,8 +435,5 @@ async fn main() -> Result<()> {
                 );
             }
         }
-        
-        // Small sleep to prevent busy-waiting
-        tokio::time::sleep(Duration::from_micros(500)).await;
     }
 }

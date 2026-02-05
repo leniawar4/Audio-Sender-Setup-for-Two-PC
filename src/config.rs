@@ -60,8 +60,8 @@ impl Default for NetworkConfig {
             bind_address: "0.0.0.0".to_string(),
             udp_port: DEFAULT_UDP_PORT,
             remote_address: None,
-            send_buffer_size: 2 * 1024 * 1024, // 2 MB
-            recv_buffer_size: 2 * 1024 * 1024, // 2 MB
+            send_buffer_size: 4 * 1024 * 1024, // 4 MB - larger to handle bursts
+            recv_buffer_size: 4 * 1024 * 1024, // 4 MB - larger to prevent drops
             reuse_addr: true,
         }
     }

@@ -116,12 +116,19 @@ impl AudioReceiver {
         let handle = thread::Builder::new()
             .name("audio-receiver".to_string())
             .spawn(move || {
+                // Use larger buffer to handle MTU + headers
                 let mut recv_buffer = vec![0u8; 2048];
                 
+                // Adaptive backoff for empty reads
+                let mut empty_reads = 0u32;
+                const MAX_EMPTY_READS: u32 = 100;
+                
                 while running.load(Ordering::Relaxed) {
-                    // Try to receive with timeout via non-blocking + sleep
                     match socket.recv_from(&mut recv_buffer) {
                         Ok((size, _addr)) => {
+                            // Reset empty read counter on successful receive
+                            empty_reads = 0;
+                            
                             bytes_received.fetch_add(size as u64, Ordering::Relaxed);
                             
                             // Parse packet
@@ -132,12 +139,12 @@ impl AudioReceiver {
                                 let received = ReceivedPacket::from(packet);
                                 let track_id = received.track_id;
                                 
-                                // Send to track-specific channel
+                                // Send to track-specific channel (non-blocking)
                                 if let Some(tx) = track_channels.get(&track_id) {
                                     let _ = tx.try_send(received.clone());
                                 }
                                 
-                                // Send to global channel
+                                // Send to global channel (non-blocking)
                                 if let Some(ref tx) = global_tx {
                                     let _ = tx.try_send(received);
                                 }
@@ -146,11 +153,24 @@ impl AudioReceiver {
                             }
                         }
                         Err(ref e) if e.kind() == std::io::ErrorKind::WouldBlock => {
-                            // No data available, sleep briefly
-                            thread::sleep(std::time::Duration::from_micros(100));
+                            // Adaptive backoff: start with spin, then yield, then sleep
+                            empty_reads = empty_reads.saturating_add(1);
+                            
+                            if empty_reads < 10 {
+                                // Spin - lowest latency for bursty traffic
+                                std::hint::spin_loop();
+                            } else if empty_reads < MAX_EMPTY_READS {
+                                // Yield to other threads
+                                thread::yield_now();
+                            } else {
+                                // Brief sleep to prevent CPU hogging during silence
+                                thread::sleep(std::time::Duration::from_micros(50));
+                            }
                         }
                         Err(e) => {
-                            tracing::warn!("Receive error: {}", e);
+                            if e.kind() != std::io::ErrorKind::Interrupted {
+                                tracing::warn!("Receive error: {}", e);
+                            }
                             thread::sleep(std::time::Duration::from_millis(1));
                         }
                     }

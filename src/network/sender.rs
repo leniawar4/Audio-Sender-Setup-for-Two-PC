@@ -106,10 +106,24 @@ impl AudioSender {
         packets_sent: Arc<AtomicU64>,
         bytes_sent: Arc<AtomicU64>,
     ) {
+        // Adaptive timeout: start fast, slow down during silence
+        let mut consecutive_timeouts = 0u32;
+        const MAX_CONSECUTIVE_TIMEOUTS: u32 = 100;
+        
         while running.load(Ordering::Relaxed) {
-            // Try to receive packet with timeout
-            match packet_rx.recv_timeout(std::time::Duration::from_millis(10)) {
+            // Adaptive timeout based on traffic pattern
+            let timeout = if consecutive_timeouts < 10 {
+                std::time::Duration::from_micros(100) // Fast polling during active streaming
+            } else if consecutive_timeouts < MAX_CONSECUTIVE_TIMEOUTS {
+                std::time::Duration::from_millis(1) // Medium polling
+            } else {
+                std::time::Duration::from_millis(5) // Slow polling during silence
+            };
+            
+            match packet_rx.recv_timeout(timeout) {
                 Ok(encoded) => {
+                    consecutive_timeouts = 0; // Reset on successful receive
+                    
                     // Create audio packet
                     let packet = AudioPacket {
                         track_id: encoded.track_id,
@@ -127,12 +141,15 @@ impl AudioSender {
                             bytes_sent.fetch_add(sent as u64, Ordering::Relaxed);
                         }
                         Err(e) => {
-                            tracing::warn!("Failed to send packet: {}", e);
+                            // Only log periodically to avoid log spam
+                            if packets_sent.load(Ordering::Relaxed) % 1000 == 0 {
+                                tracing::warn!("Failed to send packet: {}", e);
+                            }
                         }
                     }
                 }
                 Err(crossbeam_channel::RecvTimeoutError::Timeout) => {
-                    // No packet available, continue
+                    consecutive_timeouts = consecutive_timeouts.saturating_add(1);
                 }
                 Err(crossbeam_channel::RecvTimeoutError::Disconnected) => {
                     // Channel closed, exit
